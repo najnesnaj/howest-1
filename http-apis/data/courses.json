@@ -1,0 +1,471 @@
+[{
+    "title": "Basic Programming",
+    "description": null,
+    "tools": "Python, Visual Studio Code",
+    "semester": 1,
+    "weight": 10,
+    "tags": ["principles", "python"],
+    "pillar": "code",
+    "tracks": null,
+    "content": "<p>In deze module leren we de basisprincipes van programmeren aan via de programmeertaal <strong>Python</strong>. In het eerste deel leren we de syntax aan waarbij we uitgebreid stilstaan bij variabelen, deelproblemen, collectiestructuren, lusstructuren, enumerations &amp; arrays, enz. Dit laat ons toe om kleine applicaties te ontwikkelen die lezen en schrijven naar databestanden te verzorgen. Ondertussen hebben we ook aandacht voor een <strong>goede en consequente codestijl</strong>. In het tweede deel focust zich op <strong>OOP (Object Oriented Programming)</strong>, een techniek die in elke programeertaal aanwezig is.</p>\n"
+}, {
+    "title": "Frontend Foundations",
+    "description": null,
+    "tools": ["Visual Studio Code"],
+    "semester": 1,
+    "weight": 20,
+    "tags": ["HTML", "(S)CSS", "Responsive"],
+    "pillar": "code",
+    "tracks": null,
+    "content": "<p>In deze korte module kan je leren hoe een webpagina technisch opgebouwd wordt. Dit doen we niet aan de hand van ellenlange theorie, maar we pakken deze module onmiddellijk hand-on aan.\nJe leert werken met Hypertext Markup Language <strong>(HTML)</strong> en (Sassy) Cascading Style Sheets <strong>(SCSS)</strong> om web interfaces technisch uit te werken vanaf een voorontwerp.</p>\n<p>Volgende topics komen aan bod:</p>\n<ul>\n<li>HTML (Hypertext Markup Language)</li>\n<li>(S)CSS (Cascading Style Sheets)</li>\n<li>De combinatie van deze talen</li>\n<li>(S)CSS-frameworks</li>\n<li>Responsiveness</li>\n<li>Gebruik van best practices</li>\n<li>Voorontwerpen omzetten naar (deel)assets en/of volledige webinterfaces</li>\n</ul>\n"
+}, {
+    "title": "User Experience Design",
+    "description": null,
+    "tools": "Adobe XD, pen & papier",
+    "semester": 1,
+    "weight": 25,
+    "tags": ["ux", "Testing", "prototype"],
+    "pillar": "design",
+    "tracks": null,
+    "content": "<p>In deze module leren we <strong>designen voor de eindgebruiker</strong>. We bekijken <strong>verschillende technieken</strong> om een product te maken dat precies <strong>op maat van de doelgroep</strong> is. Het eerste onderdeel in onze workflow is <strong>research</strong>. Nadat we een onderzoek gedaan hebben, gaan we met deze kennis aan de slag om een eerste prototype te maken. Een <strong>eerste prototype</strong> kan op papier gebeuren. Heel snel gaan we met Adobe XD aan de slag. Adobe XD is gemaakt voor ontwerpers en het is de snelste manier om gebruikerservaringen te ontwerpen, te prototypen en te delen of het nu gaat over websites of mobiele apps of over spraakinteracties.</p>\n<p>Uiteindelijk <strong>testen</strong> we of alles op een logische plaats staat, of gebruikers onze app of website goed kunnen gebruiken en hoe we de <strong>eerste stappen naar</strong> een <strong>afgewerkt design</strong> kunnen zetten.\nIn deze eerste design module ga je ook zorgen dat je je basisbouwstenen voor webdevelopment beheerst: <strong>HTML</strong> en <strong>CSS</strong> leer je zelfstandig met behulp van blended learning.</p>\n<p>Patterns, usability heuristics, design thinking en Gestalt theorie komen aan bod in de uitlegsessies. Elke editie nodigen we professionals uit om hun expertise op het gebied van User Experience te delen. Zo kwamen bijvoorbeeld al knappe casussen van Skinn Branding Agency uitgebreid aan bod.</p>\n<p>In de werkcolleges oefenen we de verschillende aspecten van de workflow. De verschillende challenges maken het uitdagend om je te verdiepen in User Experience.</p>\n"
+}, {
+    "title": "Computer Networks",
+    "description": null,
+    "tools": "Windows 10/11, Debian Linux, Raspberry Pi, SOHO router, VMware virtualisatie",
+    "semester": 1,
+    "weight": 30,
+    "tags": ["security", "debian", "r.pi", "raspbian", "apache", "mysql", "ccna", "cisco"],
+    "pillar": "connect",
+    "tracks": null,
+    "content": "<p>Tegenwoordig is elke computer verbonden met de wereld. Het internet heb je aan je vingers op je smartphone. Maar hoe komt dat eigenlijk? Hoe hangt alles aan elkaar?</p>\n<p>In Computer Networks lopen we stap voor stap door een <strong>Small Office / Home Office (SOHO)</strong> netwerk om inzicht te krijgen in de <strong>opbouw</strong>, <strong>werking</strong> en <strong>beveiliging</strong> ervan. Je hoeft geen expert te zijn, want de basiskennis wordt stapsgewijs uitgelegd in praktische labo\u2019s, ondersteund met de nodige theorie.</p>\n<p>We beginnen bij de client met <strong>besturingssysteem Windows 10/11</strong> en vervolgens <strong>Linux</strong>, zowel <strong>Debian</strong> als <strong>Raspberry Pi OS</strong> op jouw persoonlijke Raspberry Pi. We bekijken een aantal basis- en beheerscommando\u2019s om een basis server op te bouwen, uiteraard met de nodige achtergrondkennis.\nOm je klaar te stomen voor de andere modules zal je op je Raspberry Pi een volledig geconfigureerde <strong>webserver</strong> en <strong>database</strong> kunnen opstarten.</p>\n<p>Daarna gaan we deze toestellen integreren in een netwerk en gaan zo over de bekabeling naar centrale netwerkcomponenten zoals <strong>switches</strong>, <strong>draadloze access points</strong>, <strong>routers</strong> en <strong>firewalls</strong>.\nDe kennis over deze componenten gebruiken we om verschillende netwerken op te bouwen en te configureren om uiteindelijk een compleet netwerk vanaf nul op te zetten, zowel bekabeld als draadloos. Hier speelt de integratie van alle theoretische \u00e9n de praktische kennis een belangrijke rol. Je installeert, configureert \u00e9n beveiligt een netwerk vanaf de grond op, waarna je de servers en clients ermee koppelt.</p>\n<p>Een goeie basis van <strong>IP subnetting</strong> en <strong>routing</strong> komt hier ook aan bod. Als <strong>Cisco Networking Academy</strong> gebruiken we de module &lsquo;Introduction to Networking&rsquo; als ondersteunend materiaal. In latere modules komen de andere delen van de Cisco opleiding aan bod.</p>\n"
+}, {
+    "title": "Data Science & AI",
+    "description": null,
+    "tools": "Excel, Jupyter Notebook, Python",
+    "semester": 1,
+    "weight": 30,
+    "tags": ["informationextraction", "datarepresentation", "predicting"],
+    "pillar": "analysis",
+    "tracks": null,
+    "content": "<p>In data science bestaat de <strong>uitdaging</strong> erin om <strong>uit</strong> (grote hoeveelheden) <strong>data zinvolle informatie</strong> te halen.<!-- raw HTML omitted -->Data science biedt een zodanige <strong>economische meerwaarde</strong> dat er niet meer aan te ontkomen valt. Het drijft zelfs de vierde industri\u00eble revolutie in een razend tempo vooruit. De meest succesvolle bedrijven ter wereld zijn heel dikwijls ook koploper op het vlak van data science en artifici\u00eble intelligentie. Denk maar aan Google en Facebook die gebruikersprofielen analyseren en advertenties op maat aanbieden, Tesla die aan de hand van sensordata hun wagens zelfrijdend maakt, luchtvaarmaatschappijen die optimale vliegroutes bepalen, banken die beurkoersen voorspellen of risico\u2019s voorspellen of fraude detecteren.</p>\n<p>In deze module leg je de basis om <strong>data om te zetten naar bruikbare inzichten</strong>. Dit begint bij het evalueren van de <strong>bruikbaarheid van de data</strong> en de <strong>preprocessing</strong> van een <strong>dataset</strong>. Vervolgens leer je <strong>statistische analyses</strong> toe te passen, <strong>data te visualiseren</strong>, conclusies te trekken en <strong>gefundeerde keuzes</strong> te maken. Je leert kennis maken met kansverdeling, regressie en zet zelfs je eerste stapjes in <strong>Machine learning en AI</strong>.</p>\n"
+}, {
+    "title": "Prototyping",
+    "description": null,
+    "tools": "Arduino, ESP32",
+    "semester": 1,
+    "weight": 50,
+    "tags": ["arduino", "sensors", "microcontroller", "prototyping"],
+    "pillar": "project",
+    "tracks": null,
+    "content": "<p>Met behulp van een microcontrollerboard (bv.: Arduino UNO, ESP32) en enkele elektronica componenten bouwen we een tof idee uit tot een werkend prototype. We starten met de basis, dus voorkennis is niet vereist. Elektrische schakelingen en componenten worden stap per stap verkend. We leren werken met de multimeter zodat we zelf fouten kunnen opsporen en indien nodig de fouten opsporen en oplossen. De software code om het controller bordje aan te sturen leren we ook stap per stap opbouwen. We schrijven de software code op de laptop en sturen deze dan door naar ons controllerboard.</p>\n<p>Voorbeelden van enkele leuke oefeningen zijn o.a.: met enkele kleuren ledjes een patroon weergeven, de intensiteit van licht inlezen en daaraan enkele acties koppelen of met een temperatuur sensor, een transistor en de nodige software een motortje als ventilator aansturen &hellip;</p>\n<p>We gebruiken voor de meeste schakelingen een breadboard (oefen prikbord), maar we leren ook kleine schakelingen solderen, om kleine herstellingen (draadje losgekomen &hellip;) te kunnen uitvoeren of om kleine proefopstellingen te kunnen maken.</p>\n<p>We bouwen een eigen spelletje met knopjes en ledjes. Dit kan bijvoorbeeld een &ldquo;Simon Says&rdquo; of een &ldquo;stay-in-the-box&rdquo; game zijn. Al deze oefeningen vormen de basis om in het volgend semester sensoren met een Raspberry Pi in te kunnen lezen om verder de IoT wereld te kunnen verkennen.</p>\n"
+}, {
+    "title": "Full Stack Web Development",
+    "description": null,
+    "tools": "Visual Studio Code, Postman",
+    "semester": 2,
+    "weight": 10,
+    "tags": ["Python", "Flask", "Javascript"],
+    "pillar": "code",
+    "tracks": null,
+    "content": "<p><strong>In deze module kan je leren hoe je een volledig API-driven website kan maken en van A tot Z coderen.\nOmdat je als bachelor MCT kan kiezen voor de specialisatie Next Web Developer moet je in staat zijn om volledige (full stack) websites te bouwen.</strong></p>\n<p>In deze module maken wij vanaf het begin een duidelijke splitsing tussen de kant van de website die voor de gebruiker bestemd is (de frontend) en de kant waar de gegevens opgehaald en verwerkt worden (de backend).</p>\n<p>Om deze beide zijdes te kunnen programmeren of te scripten maken we gebruik van twee programmeertalen: Javascript voor de frontend ontwikkeling en Python voor de backend ontwikkeling.</p>\n<p>Het uitzicht van de website bepalen en ontwikkelen enerzijds en hoe je databanken manipuleert anderzijds zal je aanleren in de modules <a href=\"/programma/user-interface-design\">User Interface Design</a> en <a href=\"/programma/datamanagement\">Datamanagement</a><!-- raw HTML omitted -->.</p>\n<p>Het ultieme doel van deze module is ervoor zorgen dat er een real-time tweewegs-communicatie ontstaat tussen sensoren en actuatoren op je Raspberry Pi en je zelfgemaakte website.</p>\n"
+}, {
+    "title": "User Interface Design",
+    "description": null,
+    "tools": "Adobe XD, Photoshop en Atom",
+    "semester": 2,
+    "weight": 20,
+    "tags": ["ui", "design", "HTML", "CSS"],
+    "pillar": "design",
+    "tracks": null,
+    "content": "<p>Een goede User Interface draagt bij tot een betere <!-- raw HTML omitted -->User experience<!-- raw HTML omitted -->.\nIn deze module leer je hoe je de principes van visual design zoals typgrafie, kleur, layout en vertical rhythm kan toepassen om een aantrekkelijke, uitnodigende en gebruiksvriendelijke interface te ontwerpen.\nJe leert werken met <strong>Adobe XD</strong> om interfaces te ontwerpen. <strong>Photoshop</strong> gebruiken we om foto&rsquo;s te bewerken en assets aan te maken.</p>\n<p>User Interface design is niet enkel in een grafische tool schermen uitwerken. Voor het web zijn er tal van design beslissingen die je veel beter kan nemen rechtstreeks in de natuurlijke omgeving van het web: de browser. Responsive webdesign, hover effecten, kleine animaties\u2026 allemaal zaken die je het best kan doen met <strong>CSS</strong>. Daarom leren we in deze module al snel hoe je de principes van visual design kan toepassen met CSS. Je leert werken met de handige text editor <strong>Atom</strong>.</p>\n<p>Op het einde zien we hoe we <strong>Javascript en CSS</strong> kunnen combineren om kleine interacties zoals een mobiele navigatie mogelijk te maken. Javascript leer je in <a href=\"/programma/full-stack-web-development\">Full Stack Web Development</a>.</p>\n"
+}, {
+    "title": "Sensors & Interfacing",
+    "description": null,
+    "tools": "Arduino, ESP32, Raspberry Pi, I2C, SPI Bus, One-Wire",
+    "semester": 2,
+    "weight": 30,
+    "tags": ["raspberrypi", "microcontrollers", "sensors", "protocol", "bitoperations"],
+    "pillar": "connect",
+    "tracks": null,
+    "content": "<p>Met behulp van een single board computer (bv.: Raspberry Pi) en enkele elektronica componenten en sensoren verkennen we verschillende protocollen om data uit te wisselen tussen verschillende devices. We leren werken met seri\u00eble protocollen, <strong>I2C bussen</strong>, de <strong>SPI bus</strong>, de <strong>One-Wire bus</strong> en andere seri\u00eble en parallelle communicatie tussen componenten onderling of naar de buitenwereld. We gebruiken daarvoor onder andere displays, sensoren (temperatuur, licht, acceleratormeter &hellip;), microcontrollers, motoren &hellip;</p>\n<p>We bespreken ook <strong>dataoverdracht</strong> en <strong>datacompressie</strong>, om op een snelle, effici\u00ebnte en veilige manier data van het ene toestel naar het andere toestel over te brengen. Communicatie door de lucht of toch over een kabel? Wat zijn de voor- en nadelen en waar moeten we rekening mee houden?</p>\n<p>We leren ook werken met <strong>bits</strong>, <strong>bytes</strong> en <strong>bit-operatoren</strong>. Een bit uit een byte halen? Enkele bits samenvoegen tot een byte? Na deze lessen spelen we daar mee, zodat je vlot allerlei controllers en boards kan aansturen. Data uit bijvoorbeeld een game controller ontleden heeft geen enkel geheim meer voor jou.</p>\n<p>Dit alles komt dan later terug in het opleidingsprogramma, o.a. in de project modules. In die modules kan je dan de aangeleerde communicatie, software en componenten toepassen voor jouw eigen of een door een klant gevraagd project.</p>\n"
+}, {
+    "title": "Datamanagement",
+    "description": null,
+    "tools": "MySQL Workbench",
+    "semester": 2,
+    "weight": 40,
+    "tags": ["T-SQL", "DBMS", "MYSQL", "BCNF"],
+    "pillar": "analysis",
+    "tracks": null,
+    "content": "<p>Data en databases zijn niet weg te denken uit onze hedendaagse leefwereld. Je leert het juiste <strong>databasemanagementsysteem</strong> (DBMS) te kiezen. Meeste aandacht gaat hierbij naar <strong>relationele databases</strong> om een <strong>genormaliseerd model</strong> te bouwen met <strong>T-SQL</strong>.</p>\n<p>Je <strong>manipuleert</strong> en <strong>bevraagt</strong> de <strong>gestockeerde data</strong>. Je programmeert <strong>procedurele databaseobjecten</strong> om <strong>beveiliging</strong>, <strong>onderhoud</strong> en <strong>foutcontrole</strong> te <strong>optimaliseren</strong>.</p>\n"
+}, {
+    "title": "Project One",
+    "description": null,
+    "tools": "Raspberry Pi, Webserver, Database, 3D-printer, Lasercutting, Toggl",
+    "semester": 2,
+    "weight": 50,
+    "tags": ["waterfall", "projectmanagement", "prototyping", "maker", "integrate"],
+    "pillar": "project",
+    "tracks": null,
+    "content": "<p><strong>Project One</strong> is je <strong>eerste integratiemodule</strong>: je bewijst door <strong>zelfstandig</strong> (waterfall) binnen de gegeven richtlijnen (maar met veel ruimte voor je eigen creatieve invulling) een persoonlijke case volledig uit te werken, te documenteren en te presenteren tijdens de projectweken. Je verdiept hiermee je eerder verworven technische competenties en bewijst je <strong>project skills</strong>: (Project Management, TimeManagement, leren reflecteren, product prototyping technieken, presentatietechnieken &hellip; ) die je in verschillende sessies met medewerking van gastsprekers uit de industrie hebt aangeleerd gekregen.</p>\n<p>De module Project One scherpt je schriftelijke communicatie aan, biedt een inleidende sessie over leren presenteren en leert je op een kritische manier omgaan met bronnen.\nBehoorlijk wat aandacht gaat ook naar leren reflecteren: naast de basics leer je meer over het hoe en waarom van reflecteren van professionals uit the field; stagegevers en alumni komen graag getuigen over ze groeien als professional door stil te staan bij wat goed werkte en wat misschien wat minder goed ging.</p>\n<p>Een viertal sessies gaat naar maker skills: je wil je projectwerk immers ook graag een functionele behuizing geven. Op een pragmatische manier komen 3D printing, lasercutting, basis verbindingstechnieken en andere vaardigheden aan bod die je in staat stellen om in een makerspace (Bv. in Budafabriek) of Industrial Design Center (IDC) zonder koudwatervrees aan de slag te gaan.</p>\n<p>Benieuwd naar wat je voorgangers al hebben gemaakt? Aan het eind van de projectweken is er een toonmoment voor mensen uit de industrie.\nBekijk zeker ons <a href=\"https://www.youtube.com/channel/UC6lyX8GadHRNPo7FTzrQtow\">Youtube kanaal</a> om meer filmpjes te zien van de projecten, en laat je inspireren! <a href=\"https://www.youtube.com/watch?v=bsGKQyBfyUs\">In dit filmpje</a> zie je hoe je een boekenkast slim kan maken!</p>\n"
+}, {
+    "title": "Device Programming",
+    "description": null,
+    "tools": "Xamarin.Forms, .NET MAUI, Visual Studio",
+    "semester": 3,
+    "weight": 10,
+    "tags": ["csharp", "xamarinforms", ".NET-MAUI", "oop", "android"],
+    "pillar": "code",
+    "tracks": null,
+    "content": "<p>Het doel van deze module is om <strong>C#.NET</strong> te leren en de concepten van <strong>object geori\u00ebnteerd programmeren</strong> verder uit te diepen. Deze kennis wordt ingezet om mobiele Xamarin.Forms/.NET MAUI applicaties te ontwikkelen die data manipuleren van bestaande <strong>bronnen in de cloud</strong>. Hoewel Xamarin.Forms/.NET MAUI toelaat op verschillende platformen te draaien, ligt de focus van het testen voornamelijk op Android.\nDeze module bouwt verder op de kennis die opgedaan werd in <a href=\"/programma/user-experience-design\">User Experience Design</a>, <a href=\"/programma/basic-programming\">Basic Programming</a> en <a href=\"/programma/full-stack-web-development\">Full Stack Web Development</a>, en <strong>loopt parallel met de module <a href=\"/programma/iot-cloud/\">IoT Cloud</a></strong>. Naast het verder uitdiepen van programmeerprincipes die toegepast kunnen worden in alle specialisaties, bereidt het tevens voor op meer specifieke modules zoals <strong><a href=\"/programma/smart-app-development\">Smart App Development</a></strong>, <strong><a href=\"/programma/backend-development\">Backend Development</a></strong> en <strong><a href=\"/programma/mixed-reality\">Mixed Reality</a></strong></p>\n<p>Algemene doelen voor deze module:</p>\n<ul>\n<li>Je zal de kennis die je opgedaan hebt in Basic Programming (object ge\u00f6rienteerd programmeren in <strong>Python</strong>) kunnen omzetten naar <strong>C#.NET (Xamarin/.NET MAUI)</strong>, aangevuld door <strong>extra concepten</strong> van <strong>object ge\u00f6rienteerd programmeren</strong>.</li>\n<li>Je zal weten waar Xamarin/.NET MAUI gesitueerd wordt in het <strong>.NET landschap</strong>, en wat het <strong>basis verschil</strong> is tussen Xamarin.Forms en .NET MAUI.</li>\n<li>Je zal <strong>data asynchroon kunnen lezen en/of manipuleren</strong>, door bestaande <strong>data sources</strong> in de <strong>cloud</strong> te gebruiken die data in <strong>verschillende formaten</strong> kunnen aanleveren (zoals CSV, JSON).</li>\n<li>Je zal <strong>sneller en effici\u00ebnter</strong> leren coderen door gebruik te maken van specifieke principes in zowel <strong>C# .NET</strong> als <strong>Visual Studio</strong>. Deze tool zal je ook helpen om je code efficienter te leren <strong>debuggen</strong>.</li>\n<li>Je doet een basis kennis op van <strong>XAML</strong> in <strong>Xamarin Forms/.NET MAUI</strong> zodat je in staat bent om een gebruiksvriendelijke UI te bouwen met <strong>controls en containers</strong> die best passend zijn voor de applicatie. Ook het <strong>navigatiesysteem</strong> komt aan bod.</li>\n<li>Je leert <strong>platform specifieke code en XAML</strong> schrijven in <strong>Xamarin Forms en .NET MAUI (Android, iOS, UWP)</strong>.</li>\n</ul>\n"
+}, {
+    "title": "Interaction Design",
+    "description": null,
+    "tools": "Adobe",
+    "semester": 3,
+    "weight": 20,
+    "tags": ["dashboards", "datavisualisation"],
+    "pillar": "design",
+    "tracks": null,
+    "content": "<p>In deze module integreren we kennis uit het eerste jaar (<a href=\"/programma/full-stack-web-development\">Full Stack Web Development</a>, <a href=\"/programma/user-experience-design/\">User Experience Design</a> en <a href=\"/programma/user-interface-design/\">User Interface Design</a>) tot een goed werkend geheel. De focus van de module ligt op het cree\u00ebren van een functioneel design met een goede interactie. Van <strong>microinteracties</strong> tot een goed overzicht in een <strong>dashboard</strong> wordt bekeken hoe je jouw applicatie beter kan maken. We grijpen ook nog even terug naar de UX basis en kijken hoe je door details de interactie tussen jouw applicatie en de gebruikers nog beter kan maken!</p>\n<p>Technisch werken we met HTML, CSS en JS om vorm te geven aan de idee\u00ebn en keuzes die we maken voor ons ontwerp.</p>\n"
+}, {
+    "title": "Security",
+    "description": null,
+    "tools": "Kali, Wireshark, OWASP ZAP",
+    "semester": 3,
+    "weight": 30,
+    "tags": ["privacy", "security", "testing"],
+    "pillar": "connect",
+    "tracks": null,
+    "content": "<p>Studenten worden bewust gemaakt van de mogelijke bedreigingen die de <strong>beschikbaarheid</strong>, de <strong>vertrouwelijkheid</strong> of de <strong>integriteit</strong> van een systeem <strong>kunnen compromitteren</strong>\nEr worden diverse tegenmaatregelen besproken die de kwetsbaarheid tegenover deze bedreigingen kunnen verminderen of minimaliseren.</p>\n<p>Aan de hand van <strong>praktische voorbeelden</strong> wordt getracht een inzicht te verwerven in het <strong>brede en complexe veld van de ICT-beveiliging</strong>, zowel op het gebied van WEB-technologie, netwerk-infrastructuur, hardware en software applicaties. In het bijzonder daar waar deze technologie\u00ebn worden ge\u00efntegreerd <strong>in moderne Cloud en IoT toepassingen</strong>.<br>\nEr wordt een zeer summiere inleiding gegeven in de bestaande methodieken en in de ter zake doende wetgeving.</p>\n<p><strong>Praktische labo-sessies</strong> laten de studenten zelf aan de slag gaan met een aantal tools om de <strong>effectiviteit van beveiligingen</strong> te <strong>testen</strong>. Een opgezette afgeschermde omgeving laat de studenten toe zelf een aantal <strong>kwetsbaarheden in applicaties uit te buiten</strong> zodat men zich een goed beeld kan vormen van de impact van het falen van een beveiliging.</p>\n"
+}, {
+    "title": "IoT Cloud",
+    "description": null,
+    "tools": "Azure Portal, Azure IoT-Hub",
+    "semester": 3,
+    "weight": 40,
+    "tags": ["azure", "mqtt", "webservices", "iothub"],
+    "pillar": "analysis",
+    "tracks": null,
+    "content": "<p>IoT zonder cloud is onmogelijk. Deze module bevat 3 grote delen. We gaan dieper in op opslag van data in de cloud. Daarnaast is , connectiviteit  van de devices naar de cloud zeer belangrijk. Als laatste moeten we de devices voorzien van de nodige software. Om dit alles te realiseren maken we gebruik van de <strong>Microsoft Azure Cloud</strong>. We schrijven onze eerste <strong>webservices</strong>. De <strong>hosting van de services</strong> zal gebeuren <strong>via het Serverless Platform van Azure</strong>, namelijk <strong>Azure Functions</strong>. Voor het opslaan van data maken we zowel gebruik van relationele opslag als nosql opslag. Relatione opslag van data zal gebeuren in de cloud via Azure SQL Database. Als het gaat om Nosql opslag kiezen we voor Azure Cosmos DB. Naast het opslaan van data leren we ook hoe we devices kunnen connecteren aan het Internet. Met behulp van de Raspberry Pi gaan we berichten versturen naar de Cloud. Daarnaast moeten we ook berichten ontvangen uit de Cloud. Voor beide scenario\u2019s maken we gebruik van <strong>Azure IoT Hub</strong> en <strong>MQTT</strong>. Deze managed services zal een full end to end secure verbinding opzetten waarover we berichten kunnen versturen. Als laatste zien we <strong>Azure IoT Edge</strong>. Deze oplossing laat ons toe om op een beheer  manier software te deployen naar toestellen zoals de Raspberry Pi. Cruciaal is hier het gebruik van Docker</p>\n"
+}, {
+    "title": "Team Project",
+    "description": null,
+    "tools": "Trello, Toggl",
+    "semester": 3,
+    "weight": 50,
+    "tags": ["agile", "sprints", "teamwork", "projectmanagement"],
+    "pillar": "project",
+    "tracks": null,
+    "content": "<p>Na alle modules en examens uit Semester 3 (<a href=\"/programma/device-programming\">Device Programming</a>, <a href=\"/programma/security\">Security</a>, <a href=\"/programma/iot-cloud\">IoT Cloud</a> en <a href=\"/programma/interaction-design\">Interaction Design</a>), volgt het Team Project, een traject van 3 \u00e0 4 weken. De opgedane kennis uit de vorige modules wordt tijdens deze projectweken in de praktijk omgezet in een <strong>interne case</strong>.</p>\n<p>Het voornaamste doel van deze module is om de <strong>rollen &amp; werkmethodes</strong> in <strong>projectmanagement</strong> te leren kennen en deze ook te integreren in een <strong>project van begin tot einde</strong>. Deze case wordt binnen een <strong>team</strong> uitgewerkt en gepresenteerd.</p>\n<p>Aan de hand van de <strong>agile methode</strong>, leer je voor het eerst samenwerken en communiceren in een team en met interne klanten van een andere opleiding (<strong>Sport en Bewegen</strong>). Elke week presenteer je een stand van zaken bij de docenten en word je gecoacht om het project bij te sturen en tot een goed einde te brengen.</p>\n"
+}, {
+    "title": "Backend Development",
+    "description": null,
+    "tools": "Visual Studio Code, .NET Core, MongoDB, Docker, Azure",
+    "semester": 4,
+    "weight": 10,
+    "tags": ["netcore", "crossplatform", "GraphQL", "Docker"],
+    "pillar": "code",
+    "tracks": ["next-web-developer", "ai-engineer"],
+    "content": "<p>Hoe bouw je een API die je host in een public cloud plaform zoals Azure, AWS of GCP en dit met behulp van ASP.NET Core Web API</p>\n<p>In deze module gaan we dieper in op de ontwikkeling van <strong>API&rsquo;s</strong> die gebruikt worden door frontend applicaties of later in een <strong>microservice architectuur</strong>. We starten met het opzetten van een basis API in ASP.NET Core Web API met behulp van C#. Daarna bouwen we stap voor stap verder en gaan we dieper in op zaken zoals <strong>Entity Framework</strong>, <strong>Unit Testing</strong>, <strong>Integration Testing</strong>. We leren ook hoe we applicatie hosten in <strong>Docker</strong> omgevingen. Op deze manier kan de student de module volgen zowel op Windows, Linux als Mac en kunnen de gemaakte containers op elk platform gehost worden.</p>\n"
+}, {
+    "title": "Frontend",
+    "description": null,
+    "tools": "Visual Studio Code, Chrome developer tools, React",
+    "semester": 4,
+    "weight": 10,
+    "tags": ["typescript", "scss", "react"],
+    "pillar": "code",
+    "tracks": ["next-web-developer"],
+    "content": "<p>We beginnen de module met een korte terugblik op eerdere modules. Een opfrissing van de module User interface design helpen om HTML &amp; CSS weer goed te schrijven. We nemen ook notie van de beste semantische HTML-tags en wat er kan helpen om goede SEO te bereiken op onze website\u2019s.</p>\n<p>Vanuit de JavaScript kennis die we meenemen uit device programming 1 kijken we hoe een browser onze code uitvoert. Een inzage in de JS-runtime engine en de event-loop helpt ons om te snappen hoe we het beste asynchrone JS-code schrijven en wat complexere scripts zo vlot mogelijk laat verlopen.\nWe gaan ook bekijken hoe we JavaScript code in grotere projecten kunnen gebruiken. Hier leren we werken met module- en een constructor-patroon. Nu kunnen we op een flexibele manier onze eigen JS-libraries met een module- en een constructor-patroon maken.</p>\n<p>Als we vervolgens de andere onderdelen van de browser bekijken, zien we dat er bij het parsen van een HTML-bestand ook opportuniteiten zijn. We zetten een frontend development omgeving op die ons tijdens het ontwikkelen helpt om onze volledige website te optimaliseren voor productie. Aan de hand van React voegen we hulpmiddelen toe die ons in staat stellen om effici\u00ebnt code te schrijven.\nEen manier om dit proces te verbeteren in het gebruik van SCSS. We leren hoe we goede gestructureerde styling schrijven en wat handige functionaliteiten zijn bij het gebruik van SCSS.</p>\n<p>Uiteindelijk maken we een React-project om alle onderdelen te combineren. We kijken ook naar de kracht van Next.js.</p>\n<p>Doorheen de module is er veel tijd om deze onderdelen begeleid zelf in te oefenen. Dat is ook nodig want deze module legt de basis voor de module <a href=\"/programma/framework-patterns\">Frameworks &amp; Patterns</a>.</p>\n"
+}, {
+    "title": "Network Infrastructure",
+    "description": null,
+    "tools": "Cisco, HP, CCNA",
+    "semester": 4,
+    "weight": 10,
+    "tags": ["CCNA1+2", "corporateNetworking", "IProuting", "cabling"],
+    "pillar": "connect",
+    "tracks": ["iot-infrastructure-engineer"],
+    "content": "<p>Je hebt gekozen voor het afstudeerprofiel &lsquo;IoT Infrastructure Engineer&rsquo;. Hier zetten we bedrijfsnetwerken op in het klein, ondersteund met algemene theorie:</p>\n<ul>\n<li>IP subnetting</li>\n<li>DNS</li>\n<li>DHCP</li>\n<li>NAT</li>\n<li>Port Forwarding</li>\n<li>VPN</li>\n<li>bekabeling</li>\n<li>troubleshooting, &hellip;</li>\n</ul>\n<p>Dit kan je opnieuw toepassen in de <a href=\"/programma/windows-os/\">Windows OS</a> en de <a href=\"/programma/linux-os\">Linux OS</a> modules. Je gaat aan de slag met professioneel netwerkmateriaal (Cisco, HP, &hellip;) In het labo wordt real-life netwerken opgezet met de meest gebruikte netwerktechnologi\u00ebn (VLANs, static &amp; dynamic routing, QOS, VoIP, \u2026) Je legt de module 1 &amp; 2 van <strong>Cisco Certified Network Associate</strong> (CCNA) op eigen tempo af (= deelnamecertificaten). <strong>Hands-on</strong> is het sleutelwoord!</p>\n"
+}, {
+    "title": "Unity (DAE: Platform Development 2)",
+    "description": null,
+    "tools": "Unity",
+    "semester": 4,
+    "weight": 10,
+    "tags": ["Unity", "3DProgramming"],
+    "pillar": "code",
+    "tracks": ["smart-xr-developer"],
+    "content": "<p>Een Extended Reality applicatie bouwen begint bij het ontwikkelen van een programma.\nMet behulp van Unity, een 3D engine, maken we krachtige applicaties die in staat zijn om 3D assets en animaties weer te geven.</p>\n<p>In deze samenwerking met Digital Arts &amp; Entertainment (DAE) worden jullie klaargestoomd om te werken met de technologie achter tal van games.</p>\n"
+}, {
+    "title": "3D1 (DAE)",
+    "description": null,
+    "tools": "Maya, Blender",
+    "semester": 4,
+    "weight": 20,
+    "tags": ["3D-Design", "MAYA", "Blender"],
+    "pillar": "design",
+    "tracks": ["smart-xr-developer"],
+    "content": "<p><strong>Onder voorbehoud</strong></p>\n<p>In de module 3D1 werken we samen met de opleiding Digital Arts &amp; Entertainment (DAE).\nWe leren de basis concepten van 3D design om assets te ontwikkelen en aan te passen naar wens.</p>\n<p>Op het einde van het semester ben je in staat om zelfgemaakte assets vorm te geven en naar jouw hand te zetten.\nZo bouw je mee aan de 3D-modellen voor je eigen Extended Reality applicaties.</p>\n"
+}, {
+    "title": "Advanced Programming & Maths",
+    "description": null,
+    "tools": "Python, Matplotlib, Pandas, Numpy, SciPy",
+    "semester": 4,
+    "weight": 20,
+    "tags": ["python", "algorithm", "threading", "maths"],
+    "pillar": "analysis",
+    "tracks": ["ai-engineer", "smart-xr-developer"],
+    "content": "<p>Deze module ondersteunt rechtstreeks de modules <a href=\"/programma/machine-learning\">Machine learning</a> en <a href=\"/programma/deep-learning/\">Deep learning</a> binnen AI Engineer en <a href=\"/programma/iot-devices-robotics\">IoT Devices &amp; Robotics</a> en <a href=\"/programma/unity\">Unity</a> voor de Smart XR Developers. Beide tracks zijn immers gebouwd op de programmering van afleidende logica-systemen en systemen voor kansberekening en statistiek. &ldquo;Intelligente&rdquo; algoritmes zijn in staat om van enorme hoeveelheden input te leren en dit om te zetten naar praktische output, al dan niet naar aanleiding van een nieuwe specifieke dataset die verbonden moet worden aan een bepaalde output. Dergelijke algoritmes kunnen zo uiteindelijk voorspellingen doen of beslissingen nemen, gebaseerd op de verzamelde data en de analyse hiervan.</p>\n<p>In deze module verdiepen we onze programmeervaardigheden in Python met <strong>threading/networking</strong>. We verkennen verschillende belangrijke library\u2019s zoals Pandas, Matplot, SciPy, Numpy &hellip; Deze Python pakketten maken van de simpele programmeertaal een krachtig gereedschap voor het maken van software voor data analyse en -verwerking. We verkennen re\u00efnforcement learning en bijhorende algoritmes.\nTegelijkertijd worden volgende wiskunde onderdelen aangeleerd zoals:</p>\n<ul>\n<li>Herkennen van basis wiskunde functies (<strong>gaussian function</strong>, de <strong>sigmoid</strong> function, <strong>cross-entropy</strong>, etc)</li>\n<li>Werken met exponenten en logaritmes</li>\n<li>Rekenen met matrices</li>\n<li>Kansenberekening om finaal tot de stelling van Bayes praktisch toe te gaan passen</li>\n<li>Convoluties</li>\n<li>&hellip;</li>\n</ul>\n<p>Doorheen de module is er veel tijd om alle onderdelen begeleid zelf in te oefenen.</p>\n"
+}, {
+    "title": "Big Data",
+    "description": null,
+    "tools": "Elasticsearch, Kafka, InfluxDB, AWS, MySQL, PySpark",
+    "semester": 4,
+    "weight": 20,
+    "tags": ["timeseries", "nosql", "textsearch", "mapreduce", "spark", "stream", "batch", "cloud"],
+    "pillar": "analysis",
+    "tracks": ["ai-engineer"],
+    "content": "<p>Met <strong>IoT sensor data</strong> problemen voorspellen, transacties op een veilige manier laten gebeuren of met text search intelligent informatie ophalen: <strong>data intensieve applicaties steunen op een complexe data architectuur!</strong> Je duikt diept in schema flexibility, isolation levels, index structures, partitioning en nog veel meer zodat je gefundeerde keuzes kan maken als data architect. Je zal begrijpen dat het <strong>CAP Theoreum</strong> (Consistency, Availability and Partioning, choose 2) een sterke vereenvoudiging is. Je leert hoe je (architecturale) keuzes van databaseontwikkelaars kan doorgronden en hoe je deze kan gebruiken voor jouw applicatie.</p>\n<p>Je slaat je data op in een relationele database, time series database of document store. We gaan aan de slag met o.a. de <strong>relationele database MySQL, de time series database InfluxDB en het gedistribueerde Elasticsearch</strong>, dat je zowel voor search, document store, analytics als geospatiale data kan inzetten. Steevast werken we met <strong>Docker</strong>, dit is nu eenmaal de snelste en populairste containertechnolgie om met complexe (Big Data) softwarearchitecturen aan de slag te gaan!</p>\n<p>Deze uitdagende module bouwt eveneens de data lake die ervoor zorgt dat de machine &amp; deep learning modellen die je bouwt van data voorzien worden. Afhankelijk van de situatie bouw je een <strong>stream processing architectuur</strong> met een message queue (zoals Apache Kafka) of een batch processing met frameworks zoals Apache Hadoop of Apache Spark (PySpark). Je leert ook gebruik maken van o.a. <strong>AWS cloud services</strong> zodat je kan inschatten wanneer je beroep doet op de kracht van het Amazon of Azure cloud platform en wanneer je toch beter aan de slag gaat met open source componenten. In staat zijn hardware &amp; software keuzes te maken om een <strong>Reliable, Available, Maintainable &amp; Scalable (RAMS) data intensieve applicatie</strong> te ontwerpen is de <strong>doelstelling</strong> van deze module.</p>\n"
+}, {
+    "title": "Linux OS",
+    "description": null,
+    "tools": "Debian GNU/Linux, Apache httpd, haproxy, bash, ssh",
+    "semester": 4,
+    "weight": 20,
+    "tags": ["linux", "debian", "operatingsystem", "iot"],
+    "pillar": "connect",
+    "tracks": ["iot-infrastructure-engineer"],
+    "content": "<p>Linux is alomtegenwoordig. Alleen weten veel mensen dat niet. Gebruik je soms Facebook? Of Instagram? Of Spotify? Of Twitter? Of Android? Dan <strong>gebruik je onbewust Linux</strong>. Want al deze diensten gebruiken achterliggend Linux.</p>\n<p>We starten vanaf de basis met de installatie van een linux-gebaseerd operating system. We kiezen hierbij voor <strong>Debian GNU/Linux</strong> omdat het aan de basis staat van heel vele andere bekende linux distributies zoals onder andere Ubuntu, Kali Linux, Knoppix, Element en Linux Mint.</p>\n<p>Je leert er je weg vinden in een Linux-gebaseerd Operating System, basis beheerstaken uitvoeren, servers opzetten, een volwaardig Linux-gebaseerd netwerk uitbouwen &hellip;</p>\n<p>Je leert er over backup, over <strong>loadbalancing</strong>, over <strong>high availability</strong>, over <strong>monitoring</strong>, etc. Ook is er veel ruimte voor vragen en eigen inbreng om de lessen nog interessanter te maken.</p>\n"
+}, {
+    "title": "Smart App Development",
+    "description": null,
+    "tools": "Expo, webpack, JS, ReactNative, Lottie",
+    "semester": 4,
+    "weight": 20,
+    "tags": ["expo", "reactNative", "iOS", "Android"],
+    "pillar": "code",
+    "tracks": ["next-web-developer"],
+    "content": "<p><strong>Smart App Development \u2014 Hoe maken we performante en mooie apps die een zo veel mogelijk gedeelde codebase hebben tussen iOS &amp; Android?</strong></p>\n<p>We bekijken hoe we met React Native een hybride mobile app kunnen maken met een zo veel mogelijk shared codebase. Aan de hand van Expo zetten we een vlotte development structuur op. We bekijken welke device-API&rsquo;s we kunnen gebruiken, hoe we met data werken en hoe we platform specifieke logica toevoegen.</p>\n<p>Ook komen animaties aan bod, basis microinteracties en het gestructureerd werken met Javascript.</p>\n<p>Deze module is ook een aanzet naar de web-based <a href=\"/programma/advanced-full-stack-development/\">JS-frameworks en patterns</a>.</p>\n"
+}, {
+    "title": "Virtualisation & Cloud Computing Infrastructure",
+    "description": null,
+    "tools": "VMware, HyperV, Docker, KVM",
+    "semester": 4,
+    "weight": 30,
+    "tags": ["vmware", "hyperv", "docker", "kvm", "lxc", "hyperconverged"],
+    "pillar": "connect",
+    "tracks": ["iot-infrastructure-engineer"],
+    "content": "<p>In datacenteromgevingen is virtualisatie niet meer weg te denken. Door de <strong>verlaging</strong> van de <strong>Total Cost of Ownership</strong> (TCO), de <strong>verhoging van de schaalbaarheid</strong>, de <strong>verbetering van de beschikbaarheid</strong>, en het <strong>vereenvoudigen van complexe beheerstaken</strong> overtreffen gevirtualiseerde infrastructuren de klassieke modellen in vrijwel elk opzicht. In deze module maken we jou vertrouwd met de concepten en technologie\u00ebn die gebruikt worden in <strong>moderne geconvergeerde en ge\u00efntegreerde datacenters</strong>.</p>\n<p>De basistaken die noodzakelijk zijn voor het opzetten en beheren van een infrastructuur op basis van <strong>VMware vSphere, Microsoft HyperV</strong> en <strong>KVM</strong> worden praktisch ingeoefend. Het uitrollen en beheren van applicaties met behulp van op containers gebaseerde virtualisatie technieken zoals <strong>LXC</strong> en <strong>Docker</strong> komt tevens aan bod.</p>\n"
+}, {
+    "title": "3D UX and Rigging",
+    "description": null,
+    "tools": null,
+    "semester": 4,
+    "weight": 40,
+    "tags": ["Rigging", "Animations", "3D-UX", "3D-UI"],
+    "pillar": "design",
+    "tracks": null,
+    "content": "<p><strong>Onder voorbehoud</strong></p>\n<p>3D modelen animeren a.d.h.v rigging zorgt ervoor dat je meer controle krijgt over de bewegingen van jouw assets.\nEen goede kennis van User Experience voor 3D omgevingen is zeker belangrijk. We leren de concepten om volop te benutten in Extended Reality applicaties.</p>\n<p>Deze samenwerking met Digital Arts &amp; Entertainment (DAE) geeft ons de mogelijkheid om de expertise op vlak van 3D te benutten, en de MCT inbreng te integreren.</p>\n"
+}, {
+    "title": "Applied AI",
+    "description": null,
+    "tools": "Python, Jupyter Notebook",
+    "semester": 4,
+    "weight": 40,
+    "tags": ["AI", "MachineLearning", "NeuralNetworks"],
+    "pillar": "analysis",
+    "tracks": ["smart-xr-developer"],
+    "content": "<p>Artifici\u00eble intelligentie (AI) is een onderwerp dat momenteel sterk tot de verbeelding spreekt. <strong>Zelfrijdende auto&rsquo;s</strong>, interactie met robots en slimme camera&rsquo;s zijn maar enkele van de mogelijke toepassingen van AI. Ook als Smart XR Developer is het belangrijk dat je in staat bent om een applicatie te verrijken met AI. Zo maak je jouw extended reality apps nog <strong>slimmer</strong>, waardoor het gemakkelijker is om in te spelen op wat de gebruiker wilt.</p>\n<p>In deze module maak je kennis met de basis van AI en Machine Learning, waarna je dieper in gaat op thema&rsquo;s zoals data labeling, classificatie, object detectie, segmentatie en <strong>spraaktechnologie</strong>.</p>\n<p>In deze module krijg je een overzicht krijgt van wat AI is en hoe je dit effici\u00ebnt en praktisch kan toepassen in jouw applicaties.</p>\n"
+}, {
+    "title": "Machine Learning",
+    "description": null,
+    "tools": "Support Vector Machines, Random Forest Trees, Naive Bayes, Logistic Regression, Ensemble Learning",
+    "semester": 4,
+    "weight": 40,
+    "tags": ["neuralnetworks", "ai", "machinelearning"],
+    "pillar": "analysis",
+    "tracks": ["ai-engineer"],
+    "content": "<p>IoT en machine learning zijn de drijvende krachten van de vierde industri\u00eble revolutie die de wereld zoals we deze nu kennen <strong>in een razend tempo transformeert</strong>. Dit zal onvermijdelijk leiden tot een (aard)verschuiving op de arbeidsmarkt.</p>\n<p>Veel (repetitieve jobs) zullen door AI-toepassingen worden overgenomen.</p>\n<p>Echter zullen er enorme <strong>opportuniteiten</strong> zijn voor IT\u2019ers met kennis van machine learning die slimme algoritmes en system kunnen integreren.</p>\n<p>Er wordt vooral nadruk gelegd op het <strong>conceptueel begrijpen van hoe bepaalde algoritmes werken</strong>. Belangrijk is om de <strong>juiste machine learning algoritmes te kunnen kiezen, trainen, correct evalueren</strong> en de prestaties ervan te verbeteren via <strong>hyperparameter tuning</strong>. We bekijken de meest courante machine learning technieken waarmee je in de praktijk onmiddellijk aan de slag kunt:</p>\n<ol>\n<li>Supervised learning waarbij je leert uit gelabelde data:\n<ul>\n<li>Lineaire (meervoudige) regressie waarmee je continue outputs kunt voorspellen. Voorbeelden zijn het voorspellen van beurskoersen, het schatten van de leeftijd van een persoon op basis van een foto van het gezicht, risico\u2019s voorspellen, predicties doen van verkoopsaantallen, etc.</li>\n<li>Classificatie laat je toe om data in categorie\u00ebn onder te verdelen. Gezichtsherkenning, handschriftherkenning, kankerdetectie, voorspellen of iemand op een advertentie of link zal klikken zijn maar enkele voorbeelden. Topics en algoritmes die aan bod komen zijn <strong>logistic regression, Support Vector Machines, Naive Bayes, Random Forest Trees en Ensemble learning</strong>.</li>\n</ul>\n</li>\n<li>Unsupervised learning waarbij je informatie haalt uit niet gelabelde data.\n<ul>\n<li><strong>Clustering technieken</strong> waarbij je op zoek gaat naar gelijksoortige data. Op deze manier kan je patronen, verbanden en gelijkenissen ontdekken in complexe multi-dimensionele data.</li>\n<li><strong>Dimensionality reduction</strong> laat ons toe om data te transformeren naar de essentie. Zo kan data compacter voorgesteld worden of kan de performantie van machine learning voorspellingstechnieken verhoogd worden.</li>\n</ul>\n</li>\n<li><strong>Neurale netwerken</strong>, ge\u00efnspireerd op de werking van de hersenen laten ons toe om inzichten uit data te halen die tot voor kort niet mogelijk maken. In de module machine learning bekijken we de conceptuele werking ervan en bouwen we neurale netwerken voor regressie en classificatie. Daarmee wordt de basis gelegd voor de module deep learning die hier verder op bouwt.</li>\n</ol>\n<p>Vandaag de dag al zijn <strong>data scientists en AI experts bij de meest gegeerde profielen op de arbeidsmarkt</strong>. De meest succesvolle bedrijven ter wereld zijn dikwijls degene die ook koploper zijn op het vlak van data science en artifici\u00eble intelligentie. Denk maar aan Google en Facebook die gebruikersprofielen analyseren en advertenties op maat aanbieden, Tesla die aan de hand van sensordata hun wagens zelfrijdend maakt, luchtvaarmaatschappijen die optimale vliegroutes uitstippelen, banken die beurskoersen voorspellen, risico\u2019s inschatten of fraude detecteren.</p>\n<p>In deze module leer je de <strong>concepten</strong> van een aantal <strong>machine learning algoritmes</strong> en vooral hoe je ze <strong>praktisch</strong> kunt <strong>toepassen</strong> om ML problemen op te lossen.</p>\n<p>Tevens wordt de basis gelegd voor de module <a href=\"/programma/deep-learning/\">Deep Learning</a> die hierop aansluit.</p>\n"
+}, {
+    "title": "Motion Design",
+    "description": null,
+    "tools": "Adobe After Effects, Lottie",
+    "semester": 4,
+    "weight": 40,
+    "tags": ["AfterEffects", "OnBoarding", "Animation", "Lottie", "Screencast"],
+    "pillar": "design",
+    "tracks": ["next-web-developer"],
+    "content": "<p>Naast een goede User Interface (UI), is <strong>User Experience</strong> (UX) misschien wel het belangrijkste onderdeel van een web, app of andere interface. Om een succesvolle UX te garanderen hanteren we binnen deze module <strong>motion design</strong>. Dat helpt de gebruiker onder andere bij het navigeren: via kleine onderdelen van je UI te animeren wordt de aandacht getrokken. Deze <strong>subtiele animaties</strong> helpen bij de ori\u00ebntatie op je platform. Zo wordt de gebruiker naar de juiste plaats op de site of app begeleid.\nDaarnaast kan motion design ook dienen om een <strong>actie te bevestigen</strong>. Een gebruiker krijgt feedback na een klik, scroll, upload of na het verzenden van een e-mail. Dat gaat over <strong>micro-animaties</strong>, met een simpele maar effectieve respons.\nTot slot kan motion design ook een meerwaarde zijn voor de esthetische functionaliteit van een website of applicatie. Een micro-animatie die goed getimed is, kan bijdragen tot een <strong>aangename ervaring</strong> op je platform. Denk bijvoorbeeld aan een leuke animatie in plaats van een klassiek laadicoontje tijdens het wachten. Zo is de gebruiker geneigd om je web / app sneller opnieuw te gebruiken.</p>\n"
+}, {
+    "title": "Windows OS",
+    "description": null,
+    "tools": "Microsoft Windows Server 2019, Active Directory",
+    "semester": 4,
+    "weight": 40,
+    "tags": ["windows-server-2019", "mcsa-level", "ad", "gpo", "security"],
+    "pillar": "connect",
+    "tracks": ["iot-infrastructure-engineer"],
+    "content": "<p>In heel veel bedrijven wordt <strong>Microsoft Windows Server 2019</strong> gebruikt voor authenticatie en het beveiligen van resources. <strong>Active Directory</strong> is \u00e9\u00e9n van de pijlers. Je krijgt een volledige virtuele omgeving ter beschikking (zelfs van thuis/kot bereikbaar) om een Windows gebaseerd KMO netwerk op te zetten. Aan de hand van een \u2018best practice\u2019 ben je in staat snel een goed beveiligde omgeving op te zetten. Op basis van heel wat praktijkervaring werden deze best practices samengesteld. Opnieuw wordt de labo-inhoud gerealiseerd op basis van <strong>tal van praktijkvoorbeelden</strong>.</p>\n"
+}, {
+    "title": "Industry Project",
+    "description": null,
+    "tools": null,
+    "semester": 4,
+    "weight": 50,
+    "tags": ["agile", "sprints", "teamwork", "companyprojects", "deadlines"],
+    "pillar": "project",
+    "tracks": ["next-web-developer", "smart-xr-developer", "ai-engineer", "iot-infrastructure-engineer"],
+    "content": "<p><strong>Na alle modules en examens uit Semester 4, volgt het Industry Project, een traject van 4 \u00e0 5 weken. De opgedane kennis uit de vorige modules wordt tijdens deze projectweken in de praktijk omgezet in een externe case.</strong></p>\n<p>Deze module werkt verder op de <a href=\"/programma/team-project\">Team Project</a> module. In deze module zal er een project uitgewerkt worden voor een <strong>bedrijf</strong>. Hierbij worden alle rollen en werkmethodes in projectmanagement vlot toegepast. De druk en verwachtingen liggen hier een stuk hoger. Hierbij is een goede communicatie met <strong>externe partijen</strong> dus van groot belang. De projecten situeren zich in de context van <strong>web development</strong>, <strong>AI &amp; machine learning</strong>, <strong>XR Development</strong> en <strong>infrastructure</strong>.</p>\n<p>Bedrijven waar we reeds mee samenwerken zijn onder andere <a href=\"https://www.tvh.com\">TVH</a>, <a href=\"https://www.smappee.com\">Smappee</a>, <a href=\"https://www.barco.com\">Barco</a>, [Ordina](<a href=\"https://www.ordina.be/\">https://www.ordina.be/</a>, <a href=\"https://www.kinepolis.com\">Kinepolis</a>, <a href=\"https://www.delaware.pro\">Delaware</a>.</p>\n"
+}, {
+    "title": "Cloud Services",
+    "description": null,
+    "tools": "File storage, Object storage, Docker, VPC, DDoS",
+    "semester": 5,
+    "weight": 10,
+    "tags": ["Amazon", "AWS", "Microsoft", "Azure"],
+    "pillar": "connect",
+    "tracks": ["iot-infrastructure-engineer"],
+    "content": "<p>Cloud Computing is niet meer hip, Cloud Computing is gemeengoed. Daarom is het niet meer dan logisch dat we in MCT aan de slag gaan met <strong>de twee grootste public cloud platformen: Amazon Web Services (AWS) en Microsoft Azure</strong>.</p>\n<p>We gaan van start met Microsoft Azure. We analyseren hoe Microsoft hun datacenters over de wereld verspreid heeft, hoe ze de connectiviteit tussen de datacenters inrichten en hoe wij daar optimaal gebruik kunnen van maken. We <strong>leren hoe storage in de hyper-cloud omgeving van Azure</strong> opgezet is en hoe die te gebruiken. Wanneer je diensten afneemt uit de public cloud, ben je erg afhankelijk van de netwerkverbinding naar deze diensten en tussen de diensten onderling. Daarom gaan we dieper in op <strong>Azure networking</strong>.</p>\n<p>In de tweede helft van deze module gaan we aan de slag met die ander grote public cloud: Amazon Web Services. We analyseren dezelfde onderwerpen die we bij Azure hebben gekeken, maar ditmaal in AWS: <strong>datacenter opbouw, storage, networking, IaaS</strong>.</p>\n<p>De wekelijkse lessen zijn opgebouwd uit een stuk theorie en een groot stuk labo. We vinden het <strong>in onze praktijkgerichte opleiding belangrijk om vooral hands-on aan de slag te gaan</strong>.</p>\n"
+}, {
+    "title": "Experimental XR",
+    "description": null,
+    "tools": null,
+    "semester": 5,
+    "weight": 10,
+    "tags": ["humanInterfaces", "extendedInteraction"],
+    "pillar": "code",
+    "tracks": ["smart-xr-developer"],
+    "content": "<p><strong>Onder voorbehoud</strong></p>\n<p>Extended Reality applicaties gaan koppelen aan menselijke interactie ? Het kan!\nIn deze module experimenteren we met de mogelijkheden van Eye-tracking devices en hersengolf activiteiten.</p>\n<p>Met tal van sensoren meten we de gemoedstoestand van een gebruiker, en passen hiervoor onze applicatie live aan.\nDoor middel van data verzameling en AI capteren we deze gegevens en leren we wat onze applicatie met een gebruiker doet.</p>\n<p>Deze unieke samenwerking van IoT devices, Mixed en Augmented Reality interfaces maakt ons een echte Smart XR Developer.</p>\n"
+}, {
+    "title": "Future Technologies",
+    "description": null,
+    "tools": "Cool new technologies!",
+    "semester": 5,
+    "weight": 10,
+    "tags": ["guestLectures", "sessions"],
+    "pillar": "code",
+    "tracks": ["next-web-developer"],
+    "content": "<p>In deze modules dompelen we je onder in de nieuwste en relevantste cutting edge technologie. We beginnen het semester met wekelijkse sessies van gast-sprekers uit het werkveld en lectoren. Vanuit deze inspiratie en technische kennis werk je in groep of individueel aan een veelbelovende technologie die nog in de kinderschoenen staat. Op deze manier kom jij straks als expert in het werkveld terecht.</p>\n"
+}, {
+    "title": "MLOps",
+    "description": null,
+    "tools": "Azure ML, Vertex AI, GitHub Actions, Kubernetes, Kubeflow",
+    "semester": 5,
+    "weight": 10,
+    "tags": ["Kubernetes", "CI/CD", "AutomatedAI", "CloudAI"],
+    "pillar": "code",
+    "tracks": ["ai-engineer"],
+    "content": "<p>In de module MLOps leren we AI modellen, ontwikkeld in <a href=\"/programma/deep-learning/\">Deep Learning</a> en <a href=\"/programma/advanced-ai/\">Advanced AI</a>, in productie te brengen.\nGetrainde AI modellen moeten namelijk uit de ontwikkelingsfase richting een productie omgeving komen.\nZe worden in een applicatie geintegreerd op allerlei manieren. Wij leren de best practices rond deployment.\nHiervoor werken we met de laatste nieuwe technologieen op vlak van Web API&rsquo;s, Docker en Kubernetes, op cloud en lokale servers.</p>\n<p>Daarnaast is het ook belangrijk dat een AI-ontwikkelaar hun modellen constant verbeteren en hertrainen.\nIn deze module stellen we een pipeline op die het hele trainingsproces zal automatiseren.\nAan de hand van een <strong>Continuous Integration pipeline</strong> wordt het trainingsproces deel van het deployment proces van je software applicatie.\nGebruik makend van Cloud AI oplossingen, en krachtige GPU machines is het trainingsproces nu in handen van geautomatiseerde machines.\nDe automatisatie gebeurt d.m.v. Python en CLI tools binnen <strong>Azure Machine Learning Service</strong> en <strong>Google Cloud Platform (Vertex AI)</strong>.</p>\n<p>Met een diepgaand onderzoek naar <strong>Kubeflow en MLflow</strong>, twee bekende MLOps tools, wordt deze pipeline in een mum van tijd opgestart.\nZo wordt een volledige data pipeline, AI pipeline en deployment pipeline opgezet, beheerd en onderhouden.</p>\n<p>Samenwerken in een team met een MLOps-Engineer was nog nooit zo eenvoudig!</p>\n"
+}, {
+    "title": "Advanced Full Stack Development",
+    "description": null,
+    "tools": null,
+    "semester": 5,
+    "weight": 20,
+    "tags": ["frontend", "backend", "GCP", "firebase", "morePWA", "ai"],
+    "pillar": "code",
+    "tracks": ["next-web-developer"],
+    "content": "<p>In deze module werken we aan full stack projecten die we bouwen op verschillende PaaS-oplossingen. We kijken naar de beste koppeling tussen de frontend en de backend met alle tools die momenteel interessant zijn.</p>\n"
+}, {
+    "title": "Deep Learning",
+    "description": null,
+    "tools": "Convolutional Neural Networks (CNN), Generative Adversarial Networks (GAN), Long-Short Term Memory (LSTM), Recurrent Neural Networks (RNN)",
+    "semester": 5,
+    "weight": 20,
+    "tags": ["dsp", "neural-networks", "predictions", "classifications"],
+    "pillar": "analysis",
+    "tracks": ["ai-engineer"],
+    "content": "<p><strong>Opgelet: Deze module kan je ook volgen als &lsquo;AI for Healthcare&rsquo;, een unieke samenwerking tussen Howest MCT en Howest BIT. Je leert er toegepaste praktijk toepassingen voor de medische wereld.</strong></p>\n<p>De module deep learning gaat verder waar de module <a href=\"/programma/machine-learning/\">Machine Learning</a> is gestopt, namelijk bij de neurale netwerken.</p>\n<ul>\n<li>Herhaling <strong>neurale netwerken</strong> en introductie tot deep learing.</li>\n<li><strong>Convolutional Neural Networks (CNN)</strong> die vooral gebruikt worden bij image recogntion.</li>\n<li><strong>Auto encoders en restricted Bolzmann machines</strong>: kunnen verloren of beschadigde data reconstrueren maar ook gebruikt worden om muziek te genereren of suggesties te doen.</li>\n<li><strong>Generative Adversarial Networks (GAN)</strong>. Worden gebruikt voor bijvoorbeeld generatatie van afbeeldingen, voorspellen van welk geneesmiddel zal werken bij bepaalde symptomen &hellip;</li>\n<li><strong>Recommendation systems</strong> voor het genereren van gepersonaliseerde aanbevelingen.</li>\n<li><strong>Neurale netwerken met geheugen</strong>: Recursive Neural Networks (RNN) en Long Short-term memory networks (LSTM): toepassingen zijn bijvoorbeeld natural language processing en sentiment analysis.</li>\n<li><strong>Reinforcement learning</strong>: het algoritme leert door interactie met de omgeving.</li>\n</ul>\n"
+}, {
+    "title": "Network Scripting",
+    "description": null,
+    "tools": "Powershell, Bash, Terraform, Ansible, Git, VMware",
+    "semester": 5,
+    "weight": 20,
+    "tags": ["IaC", "CaC", "Powershell", "Bash", "Python", "Terraform", "Ansible", "Git"],
+    "pillar": "connect",
+    "tracks": ["iot-infrastructure-engineer"],
+    "content": "<p>Om administratieve taken binnen een (netwerk)infrastructuur <strong>snel, geautomatiseerd en effici\u00ebnt</strong> te realiseren, kan je niet zonder <strong>scripting</strong>.\nConfigureren van DNS en DHCP, aanmaken van gebruikers en groepen, beveiligen van resources, installatie en configuratie van software, aanmaken en beheren van virtuele machines zijn maar een paar voorbeelden.</p>\n<p>Je gaat aan de slag met <strong>Microsoft Windows</strong>, verschillende <strong>Linux</strong> distributies en een virtualisatieomgeving steunend op <strong>VMware</strong>. Er wordt dus zowel aandacht besteed aan commerci\u00eble evenals open source omgevingen en tools.</p>\n<p>Aan het einde van deze module zou <strong>Infrastructure as Code</strong> (IaC) en <strong>Configuration as Code</strong> (CaC) geen geheimen meer voor jou mogen hebben! Hiervoor maken we gebruik van een breed scala aan oplossingen, waaronder Microsoft Powershell, Bash, Python, Terraform, Ansible, Git &hellip;</p>\n"
+}, {
+    "title": "Advanced AI",
+    "description": null,
+    "tools": "Deep Reinforcement Learning models",
+    "semester": 5,
+    "weight": 30,
+    "tags": ["reinforcementLearning"],
+    "pillar": "analysis",
+    "tracks": ["ai-engineer"],
+    "content": "<p>In deze hands-on module bestuderen en implementeren we Reinforcement Learning en Deep Reinforcement Learning systemen. In plaats van te leren uit data gaan deze zelflerende systemen aan de hand van <strong>trial &amp; error</strong> een optimale strategie zoeken die hen een maximale reward oplevert. Deze (Deep) Reinforcement Leerstrategie\u00ebn vinden vooral toepassingen bij zelflerende robots, optimalisatie van industri\u00eble processen, computer games, self-driving cars en gepersonaliseerde aanbevelingen. Aanvullend gaan we dieper in op een aantal populaire optimalisatie- en simulatietechnieken die de performantie van jouw gebruikte leeralgoritme gevoelig kunnen verbeteren.</p>\n"
+}, {
+    "title": "Mixed Reality",
+    "description": null,
+    "tools": "Unity, Vuforia, Hololens",
+    "semester": 5,
+    "weight": 30,
+    "tags": ["MR", "Mobile-AR", "Hololens"],
+    "pillar": "design",
+    "tracks": ["smart-xr-developer"],
+    "content": "<p>Het doel van deze module is om kennis te maken met Augmented Reality en Mixed Reality. Je maakt kennis met de verschillende mogelijkheden naar <strong>interactie en visualisatie</strong>. In het praktische luik van de module worden hiervoor business toepassingen uitgewerkt, in hoofdzaak a.d.h.v. <strong>Microsoft Hololens</strong> maar ook via <strong>mobile devices</strong> en alternatieven zoals <strong>MagicLeap</strong>.</p>\n<p>De kennis die opgedaan werd in UX-design, UI-design en <a href=\"/programma/interaction-design/\">Interaction Design</a> wordt aangehaald om User Experience om te zetten naar een volledig nieuwe <strong>augmented/mixed reality omgeving</strong>. Daarnaast wordt je kennis C#.NET uit de module <a href=\"/programma/device-programming/\">Device Programming</a> ingezet voor het programmeergedeelte in <strong>Unity en UWP</strong>.</p>\n<ul>\n<li>Je leert de <strong>User Experience</strong> te optimaliseren voor Augmented/Mixed Reality omgevingen.</li>\n<li>Je wordt ondergedompeld in de mogelijkheden die reeds op de markt zijn voor <strong>interactie en visualisatie</strong> van Augmented en Mixed Reality.</li>\n<li>Het gebruik van de game engine <strong>Unity</strong> wordt verder bekeken om een 3D augmented reality omgeving op te zetten en te programmeren.</li>\n</ul>\n"
+}, {
+    "title": "New Interface Design",
+    "description": null,
+    "tools": "Wearables",
+    "semester": 5,
+    "weight": 30,
+    "tags": ["ExtendedReality", "MultimodalInteraction", "Wearables"],
+    "pillar": "design",
+    "tracks": ["next-web-developer"],
+    "content": "<p>Aan de slag met nieuwe interfaces! We bouwen verder op eerdere design-modules die je al gekregen hebt in de voorgaande semesters. Alles wat je maakt kan technische nog zo goed zijn, als je geen goede UI of UX hebt, dan gaan jouw gebruikers hier niet mee aan de slag kunnen.</p>\n<p>We kijken naar de nieuwe interacties tussen mensen en machines via voice, nieuwe mobile devices en met minder gangbare devices.\nJe wordt ondergedompeld in de mogelijkheden die reeds op de markt zijn voor interactie en visualisatie van onder andere Augmented en Mixed Reality.</p>\n<p>Deze module hangt ook nauw samen met de <a href=\"/programma/future-technologies\">Future technologies</a> module, waar we vooral de technologie-kant bekijken.</p>\n"
+}, {
+    "title": "IoT Devices & Robotics",
+    "description": null,
+    "tools": "InfluxDB, Grafana, MQTT, Reachy",
+    "semester": 5,
+    "weight": 40,
+    "tags": ["Lora", "5G", "embeddedpython", "wearables", "EdgeAI"],
+    "pillar": "analysis",
+    "tracks": ["iot-infrastructure-engineer", "smart-xr-developer"],
+    "content": "<p>Robots bestaan al lang: zware industri\u00eble robots werden reeds geproduceerd sinds 1956. Sinds een paar jaar zijn huishoudelijke robots zoals een grasmaairobot en stofzuigerbot gemeengoed aan het worden.</p>\n<p>De echte robot revolutie moet echter nog beginnen! Robots zullen enorme sprongen vooruit maken dankzij internet of things en geavanceerde AI software. Eenmaal een robot ook een &ldquo;Thing&rdquo; is dat geconnecteerd is aan het <strong>Internet of Things</strong>, kan men AI toe passen op de data geproduceerd door de sensors van duizenden robots <strong>(= Big Data)</strong>. Robots leren dus van elkaars &ldquo;ervaringen&rdquo; dankzij Internet of Things zoals wij leren van filmpjes en websites op het Web. In Sci-Fi taal: een Skynet geconnecteerde terminator leert sneller bij dan een alleenstaande voorgeprogrammeerde R2D2.</p>\n<p>De huidige generatie van autonome robots kunnen dus met behulp van IoT en <strong>AI</strong> veel slimmer en flexibeler worden. En IoT-applicaties dringen ook door in industri\u00eble omgevingen. Een revolutie dat <strong>Industry 4.0</strong> wordt genoemd.</p>\n<p>In de module &ldquo;IoT Devices &amp; Robotics&rdquo; wordt de huidige stand van moderne commerci\u00eble en industri\u00eble robotica verkend. Je wordt uitgedaagd een visie te ontwikkelen op de mogelijkheden van de producten van de toekomst.</p>\n<p>Maar daar blijft het niet bij. In de practica ga je zelf aan de slag met bestaande robots, die je slimmer maakt en uitbreidt met baanbrekende nieuwe functionaliteiten dankzij wat je geleerd hebt in de modules <a href=\"/programma/iot-cloud/\">IoT Cloud</a>, <a href=\"/programma/big-data/\">Big Data</a>, <a href=\"/programma/machine-learning/\">Machine Learning</a> en <a href=\"/programma/deep-learning/\">Deep Learning</a> of <a href=\"/programma/applied-ai\">Applied AI</a>.</p>\n<p>Inzichten in robotica, sensoren, dataverwerking, AI en Computer vision worden aangebracht met technologie\u00ebn zoals MQTT, ESP32, LoraWAN, OpenCV en Nvidia Jetson GPU processing.</p>\n"
+}, {
+    "title": "The Collective",
+    "description": null,
+    "tools": "Miro",
+    "semester": 5,
+    "weight": 40,
+    "tags": ["international", "business", "mvp", "interdisciplinary", "entrepreneurial"],
+    "pillar": "project",
+    "tracks": ["smart-xr-developer", "next-web-developer", "ai-engineer", "iot-infrastructure-engineer"],
+    "content": "<p>The Collective is a module that requires <strong>international</strong> and / or <strong>interdisciplinary</strong> teamwork: you get the chance to work together with Communication Management, Occupational Therapy, Network Economy, Tourism &amp; Recreation Management, DAE and Industrial Product Design students.</p>\n<p>You have already a ton of project work experience but it is a whole different ball game when you team up with people with another background. For the first time more aspects than the mere technical ones deserve your attention: finance, marketing, sales &hellip;\nSometimes these aspects will need you to kill your darling ideas(s) and move forward. Agile working will lead to success.</p>\n<p>As a technical expert (IoT Infrastructure Engineer, Next Web Developer, AI Engineer or Smart XR Developer) you need to do research and work out of your comfort zone and seek for help. Luckily a multitude of people are ready to help you if you can explain what you are doing and in what manner you need their help.\nYou and your team are all but alone in this endeavour: experts and teacher-coaches help you all the way.</p>\n"
+}, {
+    "title": "Research Project",
+    "description": null,
+    "tools": "IEEE, Zotero, Mendeley",
+    "semester": 5,
+    "weight": 50,
+    "tags": ["research-project", "thesis", "new-technologies"],
+    "pillar": "project",
+    "tracks": ["next-web-developer", "smart-xr-developer", "ai-engineer", "iot-infrastructure-engineer"],
+    "content": "<p>In deze module zal er een research project uitgewerkt worden. De projecten situeren zich in de context van <strong>web development, IoT, XR, AI en (cloud) infrastructure</strong>. Dit project vormt de basis van de bachelorproef.</p>\n"
+}, {
+    "title": "Stage in binnen- of buitenland",
+    "description": null,
+    "tools": null,
+    "semester": 6,
+    "weight": 10,
+    "tags": ["teamwork", "entrepreneur", "projectmanagement", "integration"],
+    "pillar": "project",
+    "tracks": null,
+    "content": "<p>Als sluitstuk van de opleiding komt de <strong>re\u00eble ervaring</strong> met het <strong>werkveld</strong>: de stage. Hierbij is het de bedoeling om verschillende leerresultaten in werksituaties te gaan toepassen. Niet alleen door zijn omvang in duur en studiepunten maar ook als <strong>ideale instap in het werkveld</strong>, is de stage een <strong>ideale werkvorm</strong> om te functioneren als MCT&rsquo;er in een complexe authentieke situatie.</p>\n"
+}, {
+    "title": "Bachelorproef",
+    "description": null,
+    "tools": null,
+    "semester": 6,
+    "weight": 20,
+    "tags": ["reflection", "research", "field"],
+    "pillar": "project",
+    "tracks": null,
+    "content": "<p>De opleiding MCT wordt afgesloten met een stage in het werkveld \u00e9n een individuele bachelorproef. De bachelorproef is de ideale gelegenheid voor de toekomstige bachelor om zich te verdiepen in een aantal essenti\u00eble technische competenties. Daarnaast is de bachelorproef ook de manier om heel wat algemene competenties verder te ontwikkelen. Zo dient een student</p>\n<ul>\n<li>in staat zijn om gedurende korte periode een specifiek aspect te onderzoeken;</li>\n<li>hiervoor de nodige denk- als redeneervaardigheid aan te wenden;</li>\n<li>de resultaten van zijn/haar onderzoek kritisch te bekijken;</li>\n<li>gestructureerd te werk gaan;</li>\n<li>de juiste conclusies uit eigen verkregen resultaten te trekken;</li>\n<li>zijn bachelorproef voor een vakjury te verdedigen;</li>\n<li>een attitude tot levenslang leren zich eigen maken.</li>\n</ul>\n<p>Hoe komt een bachelorproef tot stand?</p>\n<ol>\n<li>De bachelorproef vertrekt van een concrete onderzoeksvraag, al dan niet afkomstig vanuit het stagewerkveld. De opleiding bewaakt het eindniveau ervan.</li>\n<li>Het onderzoek gebeurt op school: de onderzoeksvraag wordt in een afzonderlijke projectmodule (\u2018project 4\u2019) in team gedurende 6 weken volledig technisch uitgewerkt. Hierbij bedenkt/cre\u00ebert/onderzoekt het team studenten een eigen oplossing/ontwerp/prototype (al dan niet vooraf in specifieke richting gestuurd).</li>\n<li>In de bachelorproef gaat de student individueel het behaalde resultaat aftoetsen met bedrijfswereld &amp; community.</li>\n</ol>\n<p>De bachelorproef moet een valorisatiewaarde/meerwaarde voor het werkveld hebben.</p>\n<p>De student is projectverantwoordelijk en documenteert, rapporteert en presenteert zowel m.b.t. het proces als het product van de bachelorproef. De eindpresentatie gebeurt voor een jury (van interne en externe leden) al dan niet vakdeskundigen.</p>\n<p>De bekomen technische competenties zijn afhankelijk van de gekozen onderzoeksvraag.\nDe bachelorproef wordt praktisch georganiseerd gedurende de stageperiode. De voorbereidingen gebeuren in het voorgaande semester.\nDe onderzoeksvraag wordt door het werkveld in samenwerking met het lectorenteam opgesteld.</p>\n"
+}]

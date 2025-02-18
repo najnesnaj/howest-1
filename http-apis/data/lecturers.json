@@ -1,0 +1,15 @@
+[{
+        "name": "Nathan Segers",
+        "language": "Dutch",
+        "track": "AI Engineer",
+        "programmingLanguage": "Python",
+        "favouriteCourse": "MLOps"
+    },
+    {
+        "name": "Wouter Gevaert",
+        "language": "Dutch",
+        "track": "AI Engineer",
+        "programmingLanguage": "Python",
+        "favouriteCourse": "Deep Learning"
+    }
+]
