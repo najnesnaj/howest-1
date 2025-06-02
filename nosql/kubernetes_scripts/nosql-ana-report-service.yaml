@@ -1,0 +1,13 @@
+# nosql-ana-report-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: nosql-ana-report-service
+spec:
+  selector:
+    app: nosql-ana-report
+  ports:
+  - protocol: TCP
+    port: 8001
+    targetPort: 8001  # Match your containerPort
+  type: NodePort  # Use LoadBalancer for cloud setups

@@ -1,0 +1,49 @@
+# Application settings
+appName: pgadmin
+
+# Deployment settings
+deployment:
+  name: pgadmin-deployment
+  replicas: 1
+
+# Container image
+image:
+  repository: dpage/pgadmin4
+  tag: "8.8"  # Check https://hub.docker.com/r/dpage/pgadmin4 for latest
+  pullPolicy: IfNotPresent
+
+# Service settings
+service:
+  type: ClusterIP
+  port: 80
+
+# pgAdmin configuration
+pgadmin:
+  email: "admin@admin.com"
+  password: "admin"
+
+securityContext:
+  allowPrivilegeEscalation: false
+  runAsNonRoot: true
+  capabilities:
+    drop:
+      - ALL
+  seccompProfile:
+    type: RuntimeDefault
+persistence:
+  enabled: true
+  accessMode:  ReadWriteOnce
+  size: 1Gi
+
+pv:
+  name: pgadmin-pv
+  storage: 1Gi
+  accessMode: ReadWriteOnce
+  reclaimPolicy: Retain
+  storageClass: manual
+  hostPath: "/var/lib/pgadmin-data"
+pvc:
+  name: pgadmin-pvc
+  storage: 1Gi
+  accessMode: ReadWriteOnce
+  storageClass: manual

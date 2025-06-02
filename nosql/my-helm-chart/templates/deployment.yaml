@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-nosql-ana-report
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: {{ .Values.replicaCount | default 1 }}
+  selector:
+    matchLabels:
+      app: nosql-ana-report
+  template:
+    metadata:
+      labels:
+        app: nosql-ana-report
+    spec:
+      serviceAccountName: {{ .Release.Name }}-serviceaccount
+      containers:
+      - name: nosql-ana-report
+        image: {{ .Values.anaReport.image.repository }}:{{ .Values.anaReport.image.tag }}
+        ports:
+        - containerPort: 8001  # Adjust to your app’s port

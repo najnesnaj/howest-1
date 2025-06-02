@@ -1,0 +1,41 @@
+appName: postgres
+deployment:
+  name: postgres-deployment
+  replicas: 1
+image:
+  repository: postgres
+  tag: "16"
+postgres:
+  db: mydb
+  user: admin
+  password: password
+pv:
+  name: database-pv
+  storage: 5Gi
+  accessMode: ReadWriteOnce
+  reclaimPolicy: Retain
+  storageClass: manual
+  hostPath: "/var/lib/postgres-data"
+pvc:
+  name: database-pvc
+  storage: 5Gi
+  accessMode: ReadWriteOnce
+  storageClass: manual
+service:
+  name: postgres-service
+  port: 5432
+serviceAccount:
+  create: true
+  name: "my-postgres-sa"
+ingress:
+  enabled: true
+  hosts:
+    - host: postgres.example.com
+      paths:
+        - path: /
+          pathType: Prefix
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80

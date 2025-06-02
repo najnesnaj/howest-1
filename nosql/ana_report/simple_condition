@@ -1,0 +1,22 @@
+Here's the updated version of your generate_random_data() function that ensures:
+
+    Exactly 4 values > 80
+
+    Each of those peaks is at least 8 indices apart
+
+    The difference between any two consecutive values is ≤ 20
+
+    Values stay within 1–100
+
+    Other rules stay the same
+
+
+Notes
+
+    Works with n ≥ 33 (because 4 peaks need 3×8=24 spacing).
+
+    If n is bigger, peaks are more spread out randomly.
+
+    Only 4 values will be above 80.
+
+    All other values are ≤ 80.

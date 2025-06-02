@@ -1,0 +1,3 @@
+build/
+financial_report.pdf
+postgres/db_backup.sql

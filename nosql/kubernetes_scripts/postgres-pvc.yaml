@@ -1,0 +1,13 @@
+# postgres-pvc.yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: ""  # Match the PVC's storage class    
+  volumeName: postgres-pv  # Directly binds to the specific PV

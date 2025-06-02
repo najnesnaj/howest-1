@@ -1,0 +1,253 @@
+To select a single key, such as "roic", from the JSONB data in PostgreSQL, you can use the `->` operator to navigate through the JSON structure. Assuming "roic" is nested within the "financials" object, you can use the following query:
+
+SELECT data->'financials'->'ttm'->>'roic' AS name FROM companies;
+
+SELECT data->'financials'->'quarterly'->>'roic' AS name FROM companies
+
+SELECT data->'financials'->'annual'->>'roic' AS name FROM companies;
+
+SELECT data->'financials'->'annual'->>'roic' as "ROIC" , data->'metadata'->>'sector' as "SECTOR" FROM companies;
+
+SELECT data->>'qfs_symbol_v2' as "SYMBOL" ,data->'financials'->'annual'->>'roic' as "ROIC" , data->'metadata'->>'sector' as "SECTOR" FROM companies;
+
+
+--------------------
+file viscofan-es.json is an example of data fetched from quickfs
+---------------------
+
+
+To deploy your Docker containers to Kubernetes, you need to create Kubernetes manifests for your services. These manifests will define the deployments, services, and volumes required for your application.
+
+Here are the Kubernetes manifests for your PostgreSQL, pgAdmin, and API services:
+
+1. **PostgreSQL Deployment and Service**:
+
+```yaml
+# postgres-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:latest
+        env:
+        - name: POSTGRES_DB
+          value: "mydatabase"
+        - name: POSTGRES_USER
+          value: "myuser"
+        - name: POSTGRES_PASSWORD
+          value: "mypassword"
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - name: postgres-data
+          mountPath: /var/lib/postgresql/data
+      volumes:
+      - name: postgres-data
+        persistentVolumeClaim:
+          claimName: postgres-pvc
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+spec:
+  type: ClusterIP
+  ports:
+  - port: 5432
+  selector:
+    app: postgres
+```
+
+2. **pgAdmin Deployment and Service**:
+
+```yaml
+# pgadmin-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pgadmin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pgadmin
+  template:
+    metadata:
+      labels:
+        app: pgadmin
+    spec:
+      containers:
+      - name: pgadmin
+        image: dpage/pgadmin4:latest
+        env:
+        - name: PGADMIN_DEFAULT_EMAIL
+          value: "admin@admin.com"
+        - name: PGADMIN_DEFAULT_PASSWORD
+          value: "admin"
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pgadmin
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+  selector:
+    app: pgadmin
+```
+
+3. **API Deployment and Service**:
+
+```yaml
+# api-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - name: api
+        image: your-dockerhub-username/your-api-image:latest
+        env:
+        - name: ENVIRONMENT
+          value: "DOCKER"
+        ports:
+        - containerPort: 9080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api
+spec:
+  type: ClusterIP
+  ports:
+  - port: 9080
+  selector:
+    app: api
+```
+
+4. **Persistent Volume Claim for PostgreSQL**:
+
+```yaml
+# postgres-pvc.yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+```
+
+To deploy these manifests to your Kubernetes cluster, follow these steps:
+
+1. **Create the Persistent Volume Claim**:
+
+```bash
+
+with microk8s : sudo microk8s kubectl apply -f postgres-pvc.yaml
+kubectl apply -f postgres-pvc.yaml
+```
+
+2. **Deploy PostgreSQL**:
+
+```bash
+kubectl apply -f postgres-deployment.yaml
+```
+
+3. **Deploy pgAdmin**:
+
+```bash
+kubectl apply -f pgadmin-deployment.yaml
+```
+
+4. **Deploy the API**:
+
+```bash
+kubectl apply -f api-deployment.yaml
+```
+
+Make sure to replace `your-dockerhub-username/your-api-image:latest` with the actual Docker image name and tag for your API.
+
+These steps will deploy your PostgreSQL, pgAdmin, and API services to your Kubernetes cluster. You can then access these services using their respective ClusterIP services within the cluster.
+
+Similar code found with 1 license type
+
+=======================================================
+problem if not using dockerhub
+---creating local imagehub
+
+Recommendation
+For your use case (MicroK8s with a local image), Option 1 (Use MicroK8s’s Built-in Local Registry) is the best approach. It’s easy to set up, works well for development, and allows you to iterate quickly without manual imports. Here’s a summary of the steps for Option 1:
+Enable the MicroK8s registry:
+
+bash
+
+microk8s enable registry
+docker tag nosql_api:latest localhost:32000/nosql_api:latest
+docker push localhost:32000/nosql_api:latest
+Update your api-deployment.yaml to use the MicroK8s registry:
+
+    spec:
+      containers:
+      - name: api
+        image: localhost:32000/nosql_api:latest
+
+
+-------------------------------------------------
+in the api-deployment.yaml otherwise I got error : psycopg2.OperationalError: invalid integer value "tcp://10.152.183.25:5432"
+
+
+image: postgres:latest
+        env:
+        - name: POSTGRES_DB
+          value: "mydatabase"
+        - name: POSTGRES_USER
+          value: "myuser"
+        - name: POSTGRES_PASSWORD
+          value: "mypassword"
+        ports:
+        - containerPort: 5432
+---------------------------------------------        
+
+Run a New Container with Updated POSTGRES_HOST:
+bash
+Dit is een manier om de container in een nieuwe omgeving op te zetten, de POSTGRES_HOST kan dan een lokaal IP aannemen
+
+docker run -d --name myapp_1 \
+  -e POSTGRES_HOST=new-postgres-host \
+  -e POSTGRES_USER=myuser \
+  -e POSTGRES_PASSWORD=mypassword \
+  -e POSTGRES_DB=mydatabase \
+  -e POSTGRES_PORT=5432 \
+  myimage:latest

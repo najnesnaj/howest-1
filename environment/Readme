@@ -1,0 +1,7 @@
+#aanmaken machine
+
+ az ml compute create --file compute.yaml
+
+#aanmaken van een omgeving
+
+az ml environment create --file preprocessing.yaml

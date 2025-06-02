@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Documentation on workings and project
+Contents:
+
+About
+
+selecting data
+reporting
+trader behaviour
+patterns
+
+
+Docker practice
+
+changes to python code within a container
+error &amp; solution
+requirements.txt
+moving a database to another machine
+
+
+Using dockerhub
+
+installing custom database on Talos (kubernetes)
+
+
+Cloud Setup Documentation
+
+Docker Setup
+Kubernetes Setup
+General Notes
+
+
+Kubernetes
+
+activate my own docker image
+Create a Kubernetes Deployment
+deploy the image
+Expose the Application
+Check the Deployment
+
+
+Gitignore tricks
+
+trick:
+Sphinx:
+
+
+Sphinx
+Portainer
+
+install
+managing docker
+managing kubernetes
+
+
+Manage Kubernetes Clusters with portainer
+
+Add Environment in portainer:
+create a helm chart repository
+
+
+Steps to Serve the Local Image on the Kubernetes Registry
+
+1. Verify the Local Image
+2. Confirm the Registry Service
+3. Tag the Local Image
+4. Push the Image to the Registry
+5. Verify the Image in the Registry
+6. Update Helm Chart (if Needed)
+7. Ensure MicroK8s Can Pull It
+
+
+helm on microk8s
+
+testing the Helm chart
+Create a package
+create a helm chart repository
+helm repo
+helm repo list
+install postgresql
+install pgadmin
+create pgadmin helm chart
+dry run (–debug) to test :
+
+
+helmify
+
+create a repository for helm
+export your current resources
+install helmify (and go)
+flawless
+
+
+Kompose
+
+Install Kompose
+create helm chart
+Misery
+
+
+Talos
+
+new install talos
+
+
+Kubernetes extra
+
+join the party
+velero
+minIO
+metallb
+registry
+
+
+metallb
+
+talos
+Update: metallb-config.yaml
+
+
+traefik
+
+Installation
+Talos
+workaround
+check
+change the default values
+make traefik use the docker registry certs
+
+
+Setting up Certificates for a Docker Registry on Talos
+
+Overview
+Certificate Setup Approaches
+Step 1: Create a Certificate for your Registry
+Step 2: Configure Your Registry with the Certificates
+Step 3: Configure Docker Clients to Trust the Certificate
+Step 4: Test Pushing to Your Registry
+Alternative: Use Insecure Registry
+Troubleshooting
+
+
+registry
+
+second try
+pushing to the registry
+
+
+Longhorn
+
+talos patch
+check
+
+
+Installing Longhorn on a Talos Cluster
+
+Prerequisites
+Installation Steps
+Notes
+References
+remove longhorn
+running longhorn on 1 NODE
+
+
+PostgreSQL
+
+pvc (persistant volume claim)
+postgresql-values.yaml
+
+
+Configuring the Azure CLI
+
+Installation
+basic commands
+prepare environment
+using dockerhub image
+delete a container
+create azure container apps environment
+Create Azure Container Apps Environment (cursus extract)
+getting login
+connect to internally db
+starting containers
+
+
+Module Documentation
+
+correlation.py
+fastapp.py
+report.py
+update_postgres.py
+show-json.py
+
+
+Graph
+
+swagger
+
+
+SDA (software defined architecture)
+
+Physical Infrastructure
+Proxmox Server Specifications
+Virtual Machine Configuration
+Networking Architecture
+Control &amp; Automation
+Benefits of This Architecture
+
+
+Proxmox
+
+setting up an extra network bridge vmbr1
+Kernel IP routing table
+using the nodeport
+using the IP address
+modify dns config on laptop
+access http://nginx.example.com/ on talos within 10.10.10.X from 192.168.X.X
+
+
+Laptop (or PC) mods
+Kernel IP Routing Table
+Troubleshooting Kubernetes
+
+Indices and tables
+
+Index
+Module Index
+Search Page
+">
+    <meta name="generator" content="Hugo 0.147.0">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/posts/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/posts/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="My New Hugo Site">
+  <meta property="og:description" content="Documentation on workings and project Contents: About selecting data reporting trader behaviour patterns Docker practice changes to python code within a container error &amp; solution requirements.txt moving a database to another machine Using dockerhub installing custom database on Talos (kubernetes) Cloud Setup Documentation Docker Setup Kubernetes Setup General Notes Kubernetes activate my own docker image Create a Kubernetes Deployment deploy the image Expose the Application Check the Deployment Gitignore tricks trick: Sphinx: Sphinx Portainer install managing docker managing kubernetes Manage Kubernetes Clusters with portainer Add Environment in portainer: create a helm chart repository Steps to Serve the Local Image on the Kubernetes Registry 1. Verify the Local Image 2. Confirm the Registry Service 3. Tag the Local Image 4. Push the Image to the Registry 5. Verify the Image in the Registry 6. Update Helm Chart (if Needed) 7. Ensure MicroK8s Can Pull It helm on microk8s testing the Helm chart Create a package create a helm chart repository helm repo helm repo list install postgresql install pgadmin create pgadmin helm chart dry run (–debug) to test : helmify create a repository for helm export your current resources install helmify (and go) flawless Kompose Install Kompose create helm chart Misery Talos new install talos Kubernetes extra join the party velero minIO metallb registry metallb talos Update: metallb-config.yaml traefik Installation Talos workaround check change the default values make traefik use the docker registry certs Setting up Certificates for a Docker Registry on Talos Overview Certificate Setup Approaches Step 1: Create a Certificate for your Registry Step 2: Configure Your Registry with the Certificates Step 3: Configure Docker Clients to Trust the Certificate Step 4: Test Pushing to Your Registry Alternative: Use Insecure Registry Troubleshooting registry second try pushing to the registry Longhorn talos patch check Installing Longhorn on a Talos Cluster Prerequisites Installation Steps Notes References remove longhorn running longhorn on 1 NODE PostgreSQL pvc (persistant volume claim) postgresql-values.yaml Configuring the Azure CLI Installation basic commands prepare environment using dockerhub image delete a container create azure container apps environment Create Azure Container Apps Environment (cursus extract) getting login connect to internally db starting containers Module Documentation correlation.py fastapp.py report.py update_postgres.py show-json.py Graph swagger SDA (software defined architecture) Physical Infrastructure Proxmox Server Specifications Virtual Machine Configuration Networking Architecture Control &amp; Automation Benefits of This Architecture Proxmox setting up an extra network bridge vmbr1 Kernel IP routing table using the nodeport using the IP address modify dns config on laptop access http://nginx.example.com/ on talos within 10.10.10.X from 192.168.X.X Laptop (or PC) mods Kernel IP Routing Table Troubleshooting Kubernetes Indices and tables Index Module Index Search Page">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+
+  <meta itemprop="name" content="My New Hugo Site">
+  <meta itemprop="description" content="Documentation on workings and project Contents: About selecting data reporting trader behaviour patterns Docker practice changes to python code within a container error &amp; solution requirements.txt moving a database to another machine Using dockerhub installing custom database on Talos (kubernetes) Cloud Setup Documentation Docker Setup Kubernetes Setup General Notes Kubernetes activate my own docker image Create a Kubernetes Deployment deploy the image Expose the Application Check the Deployment Gitignore tricks trick: Sphinx: Sphinx Portainer install managing docker managing kubernetes Manage Kubernetes Clusters with portainer Add Environment in portainer: create a helm chart repository Steps to Serve the Local Image on the Kubernetes Registry 1. Verify the Local Image 2. Confirm the Registry Service 3. Tag the Local Image 4. Push the Image to the Registry 5. Verify the Image in the Registry 6. Update Helm Chart (if Needed) 7. Ensure MicroK8s Can Pull It helm on microk8s testing the Helm chart Create a package create a helm chart repository helm repo helm repo list install postgresql install pgadmin create pgadmin helm chart dry run (–debug) to test : helmify create a repository for helm export your current resources install helmify (and go) flawless Kompose Install Kompose create helm chart Misery Talos new install talos Kubernetes extra join the party velero minIO metallb registry metallb talos Update: metallb-config.yaml traefik Installation Talos workaround check change the default values make traefik use the docker registry certs Setting up Certificates for a Docker Registry on Talos Overview Certificate Setup Approaches Step 1: Create a Certificate for your Registry Step 2: Configure Your Registry with the Certificates Step 3: Configure Docker Clients to Trust the Certificate Step 4: Test Pushing to Your Registry Alternative: Use Insecure Registry Troubleshooting registry second try pushing to the registry Longhorn talos patch check Installing Longhorn on a Talos Cluster Prerequisites Installation Steps Notes References remove longhorn running longhorn on 1 NODE PostgreSQL pvc (persistant volume claim) postgresql-values.yaml Configuring the Azure CLI Installation basic commands prepare environment using dockerhub image delete a container create azure container apps environment Create Azure Container Apps Environment (cursus extract) getting login connect to internally db starting containers Module Documentation correlation.py fastapp.py report.py update_postgres.py show-json.py Graph swagger SDA (software defined architecture) Physical Infrastructure Proxmox Server Specifications Virtual Machine Configuration Networking Architecture Control &amp; Automation Benefits of This Architecture Proxmox setting up an extra network bridge vmbr1 Kernel IP routing table using the nodeport using the IP address modify dns config on laptop access http://nginx.example.com/ on talos within 10.10.10.X from 192.168.X.X Laptop (or PC) mods Kernel IP Routing Table Troubleshooting Kubernetes Indices and tables Index Module Index Search Page">
+  <meta itemprop="wordCount" content="433">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="My New Hugo Site">
+  <meta name="twitter:description" content="Documentation on workings and project Contents: About selecting data reporting trader behaviour patterns Docker practice changes to python code within a container error &amp; solution requirements.txt moving a database to another machine Using dockerhub installing custom database on Talos (kubernetes) Cloud Setup Documentation Docker Setup Kubernetes Setup General Notes Kubernetes activate my own docker image Create a Kubernetes Deployment deploy the image Expose the Application Check the Deployment Gitignore tricks trick: Sphinx: Sphinx Portainer install managing docker managing kubernetes Manage Kubernetes Clusters with portainer Add Environment in portainer: create a helm chart repository Steps to Serve the Local Image on the Kubernetes Registry 1. Verify the Local Image 2. Confirm the Registry Service 3. Tag the Local Image 4. Push the Image to the Registry 5. Verify the Image in the Registry 6. Update Helm Chart (if Needed) 7. Ensure MicroK8s Can Pull It helm on microk8s testing the Helm chart Create a package create a helm chart repository helm repo helm repo list install postgresql install pgadmin create pgadmin helm chart dry run (–debug) to test : helmify create a repository for helm export your current resources install helmify (and go) flawless Kompose Install Kompose create helm chart Misery Talos new install talos Kubernetes extra join the party velero minIO metallb registry metallb talos Update: metallb-config.yaml traefik Installation Talos workaround check change the default values make traefik use the docker registry certs Setting up Certificates for a Docker Registry on Talos Overview Certificate Setup Approaches Step 1: Create a Certificate for your Registry Step 2: Configure Your Registry with the Certificates Step 3: Configure Docker Clients to Trust the Certificate Step 4: Test Pushing to Your Registry Alternative: Use Insecure Registry Troubleshooting registry second try pushing to the registry Longhorn talos patch check Installing Longhorn on a Talos Cluster Prerequisites Installation Steps Notes References remove longhorn running longhorn on 1 NODE PostgreSQL pvc (persistant volume claim) postgresql-values.yaml Configuring the Azure CLI Installation basic commands prepare environment using dockerhub image delete a container create azure container apps environment Create Azure Container Apps Environment (cursus extract) getting login connect to internally db starting containers Module Documentation correlation.py fastapp.py report.py update_postgres.py show-json.py Graph swagger SDA (software defined architecture) Physical Infrastructure Proxmox Server Specifications Virtual Machine Configuration Networking Architecture Control &amp; Automation Benefits of This Architecture Proxmox setting up an extra network bridge vmbr1 Kernel IP routing table using the nodeport using the IP address modify dns config on laptop access http://nginx.example.com/ on talos within 10.10.10.X from 192.168.X.X Laptop (or PC) mods Kernel IP Routing Table Troubleshooting Kubernetes Indices and tables Index Module Index Search Page">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        My New Hugo Site
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        My New Hugo Site
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1"></h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="documentation-on-workings-and-project">Documentation on workings and project</h1>
+<h1 id="contents">Contents:</h1>
+<ul>
+<li><a href="about.md">About</a>
+<ul>
+<li><a href="about.md#selecting-data">selecting data</a></li>
+<li><a href="about.md#reporting">reporting</a></li>
+<li><a href="about.md#trader-behaviour">trader behaviour</a></li>
+<li><a href="about.md#patterns">patterns</a></li>
+</ul>
+</li>
+<li><a href="docker.md">Docker practice</a>
+<ul>
+<li><a href="docker.md#changes-to-python-code-within-a-container">changes to python code within a container</a></li>
+<li><a href="docker.md#error-solution">error &amp; solution</a></li>
+<li><a href="docker.md#requirements-txt">requirements.txt</a></li>
+<li><a href="docker.md#moving-a-database-to-another-machine">moving a database to another machine</a></li>
+</ul>
+</li>
+<li><a href="dockerhub.md">Using dockerhub</a>
+<ul>
+<li><a href="dockerhub.md#installing-custom-database-on-talos-kubernetes">installing custom database on Talos (kubernetes)</a></li>
+</ul>
+</li>
+<li><a href="cloud-setup.md">Cloud Setup Documentation</a>
+<ul>
+<li><a href="cloud-setup.md#docker-setup">Docker Setup</a></li>
+<li><a href="cloud-setup.md#kubernetes-setup">Kubernetes Setup</a></li>
+<li><a href="cloud-setup.md#general-notes">General Notes</a></li>
+</ul>
+</li>
+<li><a href="kubernetes.md">Kubernetes</a>
+<ul>
+<li><a href="kubernetes.md#activate-my-own-docker-image">activate my own docker image</a></li>
+<li><a href="kubernetes.md#create-a-kubernetes-deployment">Create a Kubernetes Deployment</a></li>
+<li><a href="kubernetes.md#deploy-the-image">deploy the image</a></li>
+<li><a href="kubernetes.md#expose-the-application">Expose the Application</a></li>
+<li><a href="kubernetes.md#check-the-deployment">Check the Deployment</a></li>
+</ul>
+</li>
+<li><a href="gitignore.md">Gitignore tricks</a>
+<ul>
+<li><a href="gitignore.md#trick">trick:</a></li>
+<li><a href="gitignore.md#sphinx">Sphinx:</a></li>
+</ul>
+</li>
+<li><a href="sphinx.md">Sphinx</a></li>
+<li><a href="portainer.md">Portainer</a>
+<ul>
+<li><a href="portainer.md#install">install</a></li>
+<li><a href="portainer.md#managing-docker">managing docker</a></li>
+<li><a href="portainer.md#managing-kubernetes">managing kubernetes</a></li>
+</ul>
+</li>
+<li><a href="portainer-kubernetes.md">Manage Kubernetes Clusters with portainer</a>
+<ul>
+<li><a href="portainer-kubernetes.md#add-environment-in-portainer">Add Environment in portainer:</a></li>
+<li><a href="portainer-kubernetes.md#create-a-helm-chart-repository">create a helm chart repository</a></li>
+</ul>
+</li>
+<li><a href="local-repository.md">Steps to Serve the Local Image on the Kubernetes Registry</a>
+<ul>
+<li><a href="local-repository.md#verify-the-local-image">1. Verify the Local Image</a></li>
+<li><a href="local-repository.md#confirm-the-registry-service">2. Confirm the Registry Service</a></li>
+<li><a href="local-repository.md#tag-the-local-image">3. Tag the Local Image</a></li>
+<li><a href="local-repository.md#push-the-image-to-the-registry">4. Push the Image to the Registry</a></li>
+<li><a href="local-repository.md#verify-the-image-in-the-registry">5. Verify the Image in the Registry</a></li>
+<li><a href="local-repository.md#update-helm-chart-if-needed">6. Update Helm Chart (if Needed)</a></li>
+<li><a href="local-repository.md#ensure-microk8s-can-pull-it">7. Ensure MicroK8s Can Pull It</a></li>
+</ul>
+</li>
+<li><a href="helm.md">helm on microk8s</a>
+<ul>
+<li><a href="helm.md#testing-the-helm-chart">testing the Helm chart</a></li>
+<li><a href="helm.md#create-a-package">Create a package</a></li>
+<li><a href="helm.md#create-a-helm-chart-repository">create a helm chart repository</a></li>
+<li><a href="helm.md#helm-repo">helm repo</a></li>
+<li><a href="helm.md#helm-repo-list">helm repo list</a></li>
+<li><a href="helm.md#install-postgresql">install postgresql</a></li>
+<li><a href="helm.md#install-pgadmin">install pgadmin</a></li>
+<li><a href="helm.md#create-pgadmin-helm-chart">create pgadmin helm chart</a></li>
+<li><a href="helm.md#dry-run-debug-to-test">dry run (–debug) to test :</a></li>
+</ul>
+</li>
+<li><a href="helmify.md">helmify</a>
+<ul>
+<li><a href="helmify.md#create-a-repository-for-helm">create a repository for helm</a></li>
+<li><a href="helmify.md#export-your-current-resources">export your current resources</a></li>
+<li><a href="helmify.md#install-helmify-and-go">install helmify (and go)</a></li>
+<li><a href="helmify.md#flawless">flawless</a></li>
+</ul>
+</li>
+<li><a href="kompose.md">Kompose</a>
+<ul>
+<li><a href="kompose.md#install-kompose">Install Kompose</a></li>
+<li><a href="kompose.md#create-helm-chart">create helm chart</a></li>
+<li><a href="kompose.md#misery">Misery</a></li>
+</ul>
+</li>
+<li><a href="talos.md">Talos</a>
+<ul>
+<li><a href="talos.md#new-install-talos">new install talos</a></li>
+</ul>
+</li>
+<li><a href="kubernetes-extra.md">Kubernetes extra</a>
+<ul>
+<li><a href="kubernetes-extra.md#join-the-party">join the party</a></li>
+<li><a href="kubernetes-extra.md#velero">velero</a></li>
+<li><a href="kubernetes-extra.md#minio">minIO</a></li>
+<li><a href="kubernetes-extra.md#metallb">metallb</a></li>
+<li><a href="kubernetes-extra.md#registry">registry</a></li>
+</ul>
+</li>
+<li><a href="metallb.md">metallb</a>
+<ul>
+<li><a href="metallb.md#talos">talos</a></li>
+<li><a href="metallb.md#update-metallb-config-yaml">Update: metallb-config.yaml</a></li>
+</ul>
+</li>
+<li><a href="traefic.md">traefik</a>
+<ul>
+<li><a href="traefic.md#installation">Installation</a></li>
+<li><a href="traefic.md#talos">Talos</a></li>
+<li><a href="traefic.md#workaround">workaround</a></li>
+<li><a href="traefic.md#check">check</a></li>
+<li><a href="traefic.md#change-the-default-values">change the default values</a></li>
+<li><a href="traefic.md#make-traefik-use-the-docker-registry-certs">make traefik use the docker registry certs</a></li>
+</ul>
+</li>
+<li><a href="certificates.md">Setting up Certificates for a Docker Registry on Talos</a>
+<ul>
+<li><a href="certificates.md#overview">Overview</a></li>
+<li><a href="certificates.md#certificate-setup-approaches">Certificate Setup Approaches</a></li>
+<li><a href="certificates.md#step-1-create-a-certificate-for-your-registry">Step 1: Create a Certificate for your Registry</a></li>
+<li><a href="certificates.md#step-2-configure-your-registry-with-the-certificates">Step 2: Configure Your Registry with the Certificates</a></li>
+<li><a href="certificates.md#step-3-configure-docker-clients-to-trust-the-certificate">Step 3: Configure Docker Clients to Trust the Certificate</a></li>
+<li><a href="certificates.md#step-4-test-pushing-to-your-registry">Step 4: Test Pushing to Your Registry</a></li>
+<li><a href="certificates.md#alternative-use-insecure-registry">Alternative: Use Insecure Registry</a></li>
+<li><a href="certificates.md#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li><a href="registry.md">registry</a>
+<ul>
+<li><a href="registry.md#second-try">second try</a></li>
+<li><a href="registry.md#pushing-to-the-registry">pushing to the registry</a></li>
+</ul>
+</li>
+<li><a href="longhorn.md">Longhorn</a>
+<ul>
+<li><a href="longhorn.md#talos-patch">talos patch</a></li>
+<li><a href="longhorn.md#check">check</a></li>
+</ul>
+</li>
+<li><a href="longhorn.md#installing-longhorn-on-a-talos-cluster">Installing Longhorn on a Talos Cluster</a>
+<ul>
+<li><a href="longhorn.md#prerequisites">Prerequisites</a></li>
+<li><a href="longhorn.md#installation-steps">Installation Steps</a></li>
+<li><a href="longhorn.md#notes">Notes</a></li>
+<li><a href="longhorn.md#references">References</a></li>
+<li><a href="longhorn.md#remove-longhorn">remove longhorn</a></li>
+<li><a href="longhorn.md#running-longhorn-on-1-node">running longhorn on 1 NODE</a></li>
+</ul>
+</li>
+<li><a href="postgresql.md">PostgreSQL</a>
+<ul>
+<li><a href="postgresql.md#pvc-persistant-volume-claim">pvc (persistant volume claim)</a></li>
+<li><a href="postgresql.md#postgresql-values-yaml">postgresql-values.yaml</a></li>
+</ul>
+</li>
+<li><a href="azure-cli.md">Configuring the Azure CLI</a>
+<ul>
+<li><a href="azure-cli.md#installation">Installation</a></li>
+<li><a href="azure-cli.md#basic-commands">basic commands</a></li>
+<li><a href="azure-cli.md#prepare-environment">prepare environment</a></li>
+<li><a href="azure-cli.md#using-dockerhub-image">using dockerhub image</a></li>
+<li><a href="azure-cli.md#delete-a-container">delete a container</a></li>
+<li><a href="azure-cli.md#create-azure-container-apps-environment">create azure container apps environment</a></li>
+<li><a href="azure-cli.md#create-azure-container-apps-environment-cursus-extract">Create Azure Container Apps Environment (cursus extract)</a></li>
+<li><a href="azure-cli.md#getting-login">getting login</a></li>
+<li><a href="azure-cli.md#connect-to-internally-db">connect to internally db</a></li>
+<li><a href="azure-cli.md#starting-containers">starting containers</a></li>
+</ul>
+</li>
+<li><a href="modules.md">Module Documentation</a>
+<ul>
+<li><a href="modules.md#module-advisor.correlation">correlation.py</a></li>
+<li><a href="modules.md#fastapp-py">fastapp.py</a></li>
+<li><a href="modules.md#module-ana_report.report">report.py</a></li>
+<li><a href="modules.md#module-nosql.update_postgres">update_postgres.py</a></li>
+<li><a href="modules.md#show-json-py">show-json.py</a></li>
+</ul>
+</li>
+<li><a href="graph.md">Graph</a>
+<ul>
+<li><a href="graph.md#swagger">swagger</a></li>
+</ul>
+</li>
+<li><a href="SDA.md">SDA (software defined architecture)</a>
+<ul>
+<li><a href="SDA.md#physical-infrastructure">Physical Infrastructure</a></li>
+<li><a href="SDA.md#proxmox-server-specifications">Proxmox Server Specifications</a></li>
+<li><a href="SDA.md#virtual-machine-configuration">Virtual Machine Configuration</a></li>
+<li><a href="SDA.md#networking-architecture">Networking Architecture</a></li>
+<li><a href="SDA.md#control-automation">Control &amp; Automation</a></li>
+<li><a href="SDA.md#benefits-of-this-architecture">Benefits of This Architecture</a></li>
+</ul>
+</li>
+<li><a href="proxmox.md">Proxmox</a>
+<ul>
+<li><a href="proxmox.md#setting-up-an-extra-network-bridge-vmbr1">setting up an extra network bridge vmbr1</a></li>
+<li><a href="proxmox.md#kernel-ip-routing-table">Kernel IP routing table</a></li>
+<li><a href="proxmox.md#using-the-nodeport">using the nodeport</a></li>
+<li><a href="proxmox.md#using-the-ip-address">using the IP address</a></li>
+<li><a href="proxmox.md#modify-dns-config-on-laptop">modify dns config on laptop</a></li>
+<li><a href="proxmox.md#access-http-nginx-example-com-on-talos-within-10-10-10-x-from-192-168-x-x">access http://nginx.example.com/ on talos within 10.10.10.X from 192.168.X.X</a></li>
+</ul>
+</li>
+<li><a href="laptop.md">Laptop (or PC) mods</a></li>
+<li><a href="routing-table.md">Kernel IP Routing Table</a></li>
+<li><a href="troubleshoot-kubernetes.md">Troubleshooting Kubernetes</a></li>
+</ul>
+<h1 id="indices-and-tables">Indices and tables</h1>
+<ul>
+<li><a href="genindex.md">Index</a></li>
+<li><a href="py-modindex.md">Module Index</a></li>
+<li><a href="search.md">Search Page</a></li>
+</ul>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+    &copy;  My New Hugo Site 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

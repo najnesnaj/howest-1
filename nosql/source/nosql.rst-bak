@@ -1,0 +1,45 @@
+nosql package
+=============
+
+Submodules
+----------
+
+nosql.app module
+----------------
+
+.. automodule:: nosql.app
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+nosql.get\_full\_data module
+----------------------------
+
+.. automodule:: nosql.get_full_data
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+nosql.show\-json module
+-----------------------
+
+.. automodule:: nosql.show-json
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+nosql.update\_postgres module
+-----------------------------
+
+.. automodule:: nosql.update_postgres
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: nosql
+   :members:
+   :show-inheritance:
+   :undoc-members:

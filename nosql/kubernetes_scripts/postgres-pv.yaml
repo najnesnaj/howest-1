@@ -1,0 +1,13 @@
+# postgres-pv.yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: postgres-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: ""  # Match the PVC's storage class
+  hostPath:
+    path: /var/lib/docker/volumes/nosql_postgres_data/_data  # Path to the Docker volume

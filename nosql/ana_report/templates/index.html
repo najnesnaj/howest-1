@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Financial Data</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Company Financial Data</h1>
+    <p>Use the API endpoints to fetch data or view plots.</p>
+    <ul>
+        <li><a href="/data">View Filtered Data</a></li>
+        <li>Example Plots:</li>
+        <ul>
+            <li><a href="/plot/BMW:DE?metric=revenue">BMW Revenue</a></li>
+            <li><a href="/plot/BMW:DE?metric=roic">BMW ROIC</a></li>
+            <li><a href="/plot/BMW:DE?metric=market_cap">BMW Market Cap</a></li>
+        </ul>
+        <li><a href="/docs">View Documentation (Swagger UI)</a></li>
+        <li><a href="/redoc">another viewer (Swagger UI)</a></li>
+        <li><a href="/generate-report">Generate PDF Report for All Companies</a></li>
+    </ul>
+</body>
+</html>

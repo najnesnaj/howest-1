@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "my-helm.fullname" . }}-postgres-pvc
+  labels:
+    {{- include "my-helm.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.pvc.postgresPvc.storageRequest | default "1Gi" | quote }}
+  storageClassName: {{ .Values.pvc.postgresPvc.storageClass | default "" | quote }}
+  volumeName: postgres-pv

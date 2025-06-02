@@ -1,0 +1,15 @@
+apiVersion: v2
+name: my-helm
+description: A Helm chart for deploying the nosql application with postgresql dependency
+type: application
+version: 0.1.2
+appVersion: "1.0.0"
+
+
+dependencies:
+  - name: postgresql
+    #version: "16.6.0"  # Use your modified version if different
+    repository:  https://localhost:32000/postgres
+    #repository: "file://../postgresql"  # Local path if using your custom chart
+    # repository: "https://charts.bitnami.com/bitnami"  # Use this if pulling from Bitnami directly
+    condition: postgresql.enabled  # Only install if postgresql.enabled is true
