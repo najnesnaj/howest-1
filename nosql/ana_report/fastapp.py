@@ -121,24 +121,35 @@ def read_root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 # Endpoint to fetch and filter data
+# changed this to COALESCE because entered synthetic datan only for market_cap, rest was left empty
+
 @app.get("/data")
-def get_data(min_market_cap: float = 500_000_000, min_roic: float = 0):
+def get_data():
     query = """
-        SELECT 
-            data->>'qfs_symbol_v2' AS symbol,
-            data->'financials'->'quarterly'->'revenue' AS revenue,
-            data->'financials'->'quarterly'->'market_cap' AS market_cap,
-            data->'financials'->'quarterly'->'roic' AS roic,
-            data->'metadata'->>'sector' AS sector
-        FROM companies;
+    SELECT 
+        data->>'qfs_symbol_v2' AS symbol,
+        COALESCE(data->'financials'->'quarterly'->'revenue', '[]'::jsonb) AS revenue,
+        COALESCE(data->'financials'->'quarterly'->'market_cap', '[]'::jsonb) AS market_cap,
+        COALESCE(data->'financials'->'quarterly'->'roic', '[]'::jsonb) AS roic,
+        data->'metadata'->>'sector' AS sector
+    FROM companies;
     """
+#    query = """
+#        SELECT 
+#            data->>'qfs_symbol_v2' AS symbol,
+#            data->'financials'->'quarterly'->'revenue' AS revenue,
+#            data->'financials'->'quarterly'->'market_cap' AS market_cap,
+#            data->'financials'->'quarterly'->'roic' AS roic,
+#            data->'metadata'->>'sector' AS sector
+#        FROM companies;
+#    """
     df = fetch_data(query)
     
     # Filter companies based on thresholds
-    df = df[
-        df['market_cap'].apply(lambda x: np.mean(x[-5:]) > min_market_cap) &  # Last 5 values of market_cap
-        df['roic'].apply(lambda x: np.mean(x[-5:]) > min_roic)  # Last 5 values of roic
-    ]
+    #df = df[
+    #    df['market_cap'].apply(lambda x: np.mean(x[-5:]) > min_market_cap) &  # Last 5 values of market_cap
+    #    df['roic'].apply(lambda x: np.mean(x[-5:]) > min_roic)  # Last 5 values of roic
+    #]
     
     # Add category columns based on patterns
     df['revenue_category'] = df['revenue'].apply(categorize_company)
@@ -195,4 +206,4 @@ def generate_pdf_report():
     )
 # Run the FastAPI app
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8001)
+    uvicorn.run(app, host="0.0.0.0", port=8002)
