@@ -5,7 +5,7 @@ display_name: everything_pipeline_settings
 #settings:
 #  default_datastore: azureml:workspaceblobstore
 #  default_compute: azureml:cpu-cluster
-name: animals-classification-cli
+name: animals-classification-cli4
 display_name: Animals Classification
 experiment_name: classification
 
@@ -80,7 +80,8 @@ jobs:
     inputs:
       model_name: jja-animal-classification
       model_type: custom_model
-      model_path: ${{parent.jobs.training.outputs.output_folder}}
+      model_path: ${{parent.jobs.training.outputs.output_folder}} # changed this
+      #model_path: ${{parent.outputs.model}}
     outputs:
       registration_details_folder: ${{ parent.outputs.registration_details }}
 
