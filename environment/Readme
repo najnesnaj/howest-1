@@ -2,6 +2,17 @@
 
  az ml compute create --file compute.yaml
 
+#check
+az ml compute show --name jja-created-machine
+
+
+
 #aanmaken van een omgeving
 
 az ml environment create --file preprocessing.yaml
+
+
+
+#create complete pipeline
+az ml pipeline create --file ai-pipeline.yaml
+
