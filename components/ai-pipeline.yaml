@@ -5,7 +5,7 @@ display_name: everything_pipeline_settings
 #settings:
 #  default_datastore: azureml:workspaceblobstore
 #  default_compute: azureml:cpu-cluster
-name: animals-classification-cli4
+name: animals-classification-cli9
 display_name: Animals Classification
 experiment_name: classification
 
@@ -71,7 +71,7 @@ jobs:
       testing_folder: ${{parent.jobs.data_split.outputs.testing_data}}
       epochs: ${{parent.inputs.epochs}}
     outputs:
-      output_folder: ${{parent.outputs.model}}
+      output_model: ${{parent.outputs.model}}
 
 
   register:
@@ -80,7 +80,7 @@ jobs:
     inputs:
       model_name: jja-animal-classification
       model_type: custom_model
-      model_path: ${{parent.jobs.training.outputs.output_folder}} # changed this
+      model_path: ${{parent.jobs.training.outputs.output_model}} # changed this
       #model_path: ${{parent.outputs.model}}
     outputs:
       registration_details_folder: ${{ parent.outputs.registration_details }}
@@ -97,7 +97,7 @@ outputs:
 
 settings:
   # default_compute: serverless
-  default_compute: azureml:jja-created-machine
+  default_compute: azureml:jja-compute
 
 
 
