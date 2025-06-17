@@ -30,7 +30,7 @@ Run the application using the command `uvicorn fastapp:app --host 0.0.0.0 --port
 
 """
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import HTMLResponse, JSONResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -41,7 +41,9 @@ import os
 import numpy as np
 import plotly.express as px
 import uvicorn
-from report import generate_report
+#from report import generate_report
+import re
+from typing import Optional, Tuple
 
 # Load environment variables
 load_dotenv()
@@ -60,17 +62,40 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 # Function to fetch data from PostgreSQL
-def fetch_data(query):
-    conn = psycopg2.connect(
-        dbname=POSTGRES_DB,
-        user=POSTGRES_USER,
-        password=POSTGRES_PASSWORD,
-        host=POSTGRES_HOST,
-        port=POSTGRES_PORT
-    )
-    df = pd.read_sql(query, conn)
-    conn.close()
-    return df
+#def fetch_data(query):
+#    conn = psycopg2.connect(
+#        dbname=POSTGRES_DB,
+#        user=POSTGRES_USER,
+#        password=POSTGRES_PASSWORD,
+#        host=POSTGRES_HOST,
+#        port=POSTGRES_PORT
+#    )
+#    df = pd.read_sql(query, conn)
+#    conn.close()
+#    return df
+
+# Updated fetch_data function to support parameterized queries
+def fetch_data(query: str, params: Optional[Tuple] = None) -> pd.DataFrame:
+    try:
+        conn = psycopg2.connect(
+            user=POSTGRES_USER,
+            password=POSTGRES_PASSWORD,
+            host=POSTGRES_HOST,
+            port=POSTGRES_PORT,
+            database=POSTGRES_DB
+        )
+        # Use parameterized query if params are provided
+        if params:
+            df = pd.read_sql(query, conn, params=params)
+        else:
+            df = pd.read_sql(query, conn)
+        conn.close()
+        return df
+    except Exception as e:
+        raise Exception(f"Database error: {str(e)}")
+
+
+
 
 # Function to categorize companies based on pattern
 def categorize_company(data):
@@ -134,24 +159,8 @@ def get_data():
         data->'metadata'->>'sector' AS sector
     FROM companies;
     """
-#    query = """
-#        SELECT 
-#            data->>'qfs_symbol_v2' AS symbol,
-#            data->'financials'->'quarterly'->'revenue' AS revenue,
-#            data->'financials'->'quarterly'->'market_cap' AS market_cap,
-#            data->'financials'->'quarterly'->'roic' AS roic,
-#            data->'metadata'->>'sector' AS sector
-#        FROM companies;
-#    """
     df = fetch_data(query)
     
-    # Filter companies based on thresholds
-    #df = df[
-    #    df['market_cap'].apply(lambda x: np.mean(x[-5:]) > min_market_cap) &  # Last 5 values of market_cap
-    #    df['roic'].apply(lambda x: np.mean(x[-5:]) > min_roic)  # Last 5 values of roic
-    #]
-    
-    # Add category columns based on patterns
     df['revenue_category'] = df['revenue'].apply(categorize_company)
     df['market_cap_category'] = df['market_cap'].apply(categorize_company)
     df['roic_category'] = df['roic'].apply(categorize_company)
@@ -163,6 +172,84 @@ def get_data():
     result = df.set_index('symbol').to_dict(orient="index")
     
     return JSONResponse(content=result)
+
+
+# Existing endpoint (for reference)
+@app.get("/data")
+def get_data():
+    query = """
+    SELECT 
+        data->>'qfs_symbol_v2' AS symbol,
+        COALESCE(data->'financials'->'quarterly'->'revenue', '[]'::jsonb) AS revenue,
+        COALESCE(data->'financials'->'quarterly'->'market_cap', '[]'::jsonb) AS market_cap,
+        COALESCE(data->'financials'->'quarterly'->'roic', '[]'::jsonb) AS roic,
+        data->'metadata'->>'sector' AS sector
+    FROM companies;
+    """
+    df = fetch_data(query)
+    
+    df['revenue_category'] = df['revenue'].apply(categorize_company)
+    df['market_cap_category'] = df['market_cap'].apply(categorize_company)
+    df['roic_category'] = df['roic'].apply(categorize_company)
+
+    df = df.drop_duplicates(subset='symbol')
+    result = df.set_index('symbol').to_dict(orient="index")
+    
+    return JSONResponse(content=result)
+
+@app.get("/data/{symbol}")
+async def get_symbol_data(symbol: str):
+    # Validate the symbol input to allow alphanumeric characters and colon
+    if not symbol or not re.match(r'^[A-Za-z0-9:]+$', symbol):
+        raise HTTPException(status_code=400, detail="Invalid symbol format. Use alphanumeric characters and colon only.")
+
+    if len(symbol) > 50:
+        raise HTTPException(status_code=400, detail="Symbol is too long.")
+
+    # Use parameterized query to prevent SQL injection
+    query = """
+    SELECT
+        data->>'qfs_symbol_v2' AS symbol,
+        COALESCE(data->'financials'->'quarterly'->'market_cap', '[]'::jsonb) AS market_cap
+    FROM companies
+    WHERE data->>'qfs_symbol_v2' = %s;
+    """
+    try:
+        # Call fetch_data with query and parameters
+        df = fetch_data(query, (symbol,))  # Expects fetch_data to handle both arguments
+
+        if df.empty:
+            raise HTTPException(status_code=404, detail=f"No data found for symbol {symbol}")
+
+        # Drop duplicates and convert to dictionary
+        df = df.drop_duplicates(subset='symbol')
+        result = df.set_index('symbol').to_dict(orient="index")
+
+        return JSONResponse(content=result)
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+
+
+# New endpoint: /data/symbol/market_cap
+@app.get("/data/symbol/market_cap")
+def get_symbol_market_cap():
+    query = """
+    SELECT 
+        data->>'qfs_symbol_v2' AS symbol,
+        COALESCE(data->'financials'->'quarterly'->'market_cap', '[]'::jsonb) AS market_cap
+    FROM companies;
+    """
+    df = fetch_data(query)
+    
+    df['market_cap_category'] = df['market_cap'].apply(categorize_company)
+    df = df.drop_duplicates(subset='symbol')
+    result = df.set_index('symbol').to_dict(orient="index")
+    
+    return JSONResponse(content=result)
+
+
 
 # Endpoint to generate a plot for a specific company
 @app.get("/plot/{symbol}")
@@ -193,17 +280,17 @@ def get_plot(symbol: str, metric: str):
     plot_html = generate_plot(data, f"{symbol} {metric.capitalize()}")
     return HTMLResponse(content=plot_html)
 
-@app.get("/generate-report", response_class=FileResponse)
-def generate_pdf_report():
-    output_file = "financial_report.pdf"
-    generate_report(output_file)
+#@app.get("/generate-report", response_class=FileResponse)
+#def generate_pdf_report():
+#    output_file = "financial_report.pdf"
+#    generate_report(output_file)
 #    return FileResponse(output_file, media_type="application/pdf", filename=output_file)
-    return FileResponse(
-        path=output_file,
-        media_type="application/pdf",
-        filename=output_file,
-        as_attachment=False
-    )
+#    return FileResponse(
+#        path=output_file,
+#        media_type="application/pdf",
+#        filename=output_file,
+#        as_attachment=False
+#    )
 # Run the FastAPI app
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8002)
