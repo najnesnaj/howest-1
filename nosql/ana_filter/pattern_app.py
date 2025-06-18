@@ -7,6 +7,11 @@ import re
 from typing import Optional, Tuple
 import numpy as np
 import tensorflow as tf
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 
 app = FastAPI()
 
@@ -39,14 +44,57 @@ def fetch_data(query: str, params: Optional[Tuple] = None) -> pd.DataFrame:
     except Exception as e:
         raise Exception(f"Database error: {str(e)}")
 
+def process_market_cap_data(market_cap_json, symbol):
+    """
+    Process market_cap data to ensure it fits the model input size (70).
+    Args:
+        market_cap_json: List or array-like market cap data
+        symbol: str, for logging purposes
+    Returns:
+        np.ndarray: Processed array of length 70, or None if processing fails
+    """
+    try:
+        # Convert JSON market_cap data to a NumPy array
+        market_cap_array = np.array(market_cap_json, dtype=float)
+
+        # Handle different lengths
+        target_length = 70
+        current_length = len(market_cap_array)
+
+        if current_length == target_length:
+            # No adjustment needed
+            pass
+        elif current_length < target_length:
+            # Pad with zeros (alternative: use mean or last value)
+            padding = np.zeros(target_length - current_length)
+            market_cap_array = np.concatenate([market_cap_array, padding])
+            print(f"Warning: Padded {current_length} quarters to {target_length} with zeros for {symbol}.")
+        else:
+            # Truncate to the most recent 70 quarters
+            market_cap_array = market_cap_array[-target_length:]
+            print(f"Warning: Truncated {current_length} quarters to {target_length} (kept most recent) for {symbol}.")
+
+        # Normalize by dividing by the maximum value (if non-zero)
+        max_value = np.max(np.abs(market_cap_array))
+        if max_value == 0:
+            print(f"Warning: Maximum market cap is zero, skipping normalization for {symbol}.")
+            return market_cap_array  # Return unnormalized array or handle differently
+        market_cap_array = market_cap_array / max_value  # Normalize to [0, 1]
+        return market_cap_array
+    except Exception as e:
+        print(f"Error processing market_cap data for {symbol}: {e}")
+        return None
+
+
+
 # Endpoint: /pattern/{symbol}
 @app.get("/pattern/{symbol}")
 async def check_pattern(symbol: str):
     # Validate the symbol input
     if not symbol or not re.match(r'^[A-Za-z0-9:]+$', symbol):
         raise HTTPException(status_code=400, detail="Invalid symbol format. Use alphanumeric characters and colon only.")
-    if len(symbol) > 50:
-        raise HTTPException(status_code=400, detail="Symbol is too long.")
+  #  if len(symbol) > 50:
+ #       raise HTTPException(status_code=400, detail="Symbol is too long.")
 
     # Query market_cap data
     query = """
@@ -62,13 +110,24 @@ async def check_pattern(symbol: str):
             raise HTTPException(status_code=404, detail=f"No data found for symbol {symbol}")
 
         # Extract market_cap data
+#TODO -- handle data that has more/less quarters 70
         market_cap = df['market_cap'].iloc[0]
-        if not isinstance(market_cap, list) or len(market_cap) != 70:
-            raise HTTPException(status_code=400, detail=f"Invalid market_cap data for {symbol}. Expected 70 quarters.")
+
+        # Process market_cap to ensure it fits model input (70 values)
+        processed_data = process_market_cap_data(market_cap, symbol)
+        if processed_data is None:
+            raise HTTPException(status_code=400, detail=f"Failed to process market_cap data for {symbol}")
 
         # Preprocess data for the model
-        input_data = np.array(market_cap, dtype=np.float32)
-        input_data = input_data.reshape(1, -1)  # Reshape to (1, 70)
+        input_data = processed_data.reshape(1, -1)  # Reshape to (1, 70)
+
+
+#        if not isinstance(market_cap, list) or len(market_cap) != 70:
+#            raise HTTPException(status_code=400, detail=f"Invalid market_cap data for {symbol}. Expected 70 quarters.")
+
+        # Preprocess data for the model
+        #input_data = np.array(market_cap, dtype=np.float32)
+        #input_data = input_data.reshape(1, -1)  # Reshape to (1, 70)
 
         # Run prediction
         prediction = MODEL.predict(input_data)

@@ -148,31 +148,31 @@ def read_root(request: Request):
 # Endpoint to fetch and filter data
 # changed this to COALESCE because entered synthetic datan only for market_cap, rest was left empty
 
-@app.get("/data")
-def get_data():
-    query = """
-    SELECT 
-        data->>'qfs_symbol_v2' AS symbol,
-        COALESCE(data->'financials'->'quarterly'->'revenue', '[]'::jsonb) AS revenue,
-        COALESCE(data->'financials'->'quarterly'->'market_cap', '[]'::jsonb) AS market_cap,
-        COALESCE(data->'financials'->'quarterly'->'roic', '[]'::jsonb) AS roic,
-        data->'metadata'->>'sector' AS sector
-    FROM companies;
-    """
-    df = fetch_data(query)
-    
-    df['revenue_category'] = df['revenue'].apply(categorize_company)
-    df['market_cap_category'] = df['market_cap'].apply(categorize_company)
-    df['roic_category'] = df['roic'].apply(categorize_company)
-    
-    # Ensure the 'symbol' column is unique
-    df = df.drop_duplicates(subset='symbol')
-
-    # Convert DataFrame to a dictionary with 'symbol' as the key
-    result = df.set_index('symbol').to_dict(orient="index")
-    
-    return JSONResponse(content=result)
-
+#@app.get("/data")
+#def get_data():
+#    query = """
+#    SELECT 
+#        data->>'qfs_symbol_v2' AS symbol,
+#        COALESCE(data->'financials'->'quarterly'->'revenue', '[]'::jsonb) AS revenue,
+#        COALESCE(data->'financials'->'quarterly'->'market_cap', '[]'::jsonb) AS market_cap,
+#        COALESCE(data->'financials'->'quarterly'->'roic', '[]'::jsonb) AS roic,
+#        data->'metadata'->>'sector' AS sector
+#    FROM companies;
+#    """
+#    df = fetch_data(query)
+#    
+#    df['revenue_category'] = df['revenue'].apply(categorize_company)
+#    df['market_cap_category'] = df['market_cap'].apply(categorize_company)
+#    df['roic_category'] = df['roic'].apply(categorize_company)
+#    
+#    # Ensure the 'symbol' column is unique
+#    df = df.drop_duplicates(subset='symbol')
+#
+#    # Convert DataFrame to a dictionary with 'symbol' as the key
+#    result = df.set_index('symbol').to_dict(orient="index")
+#    
+#    return JSONResponse(content=result)
+#
 
 # Existing endpoint (for reference)
 @app.get("/data")

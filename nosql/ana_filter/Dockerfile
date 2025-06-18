@@ -19,6 +19,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the application code and model
 COPY pattern_app.py .
 COPY my_model.keras .
+COPY .env .
 
 # Expose the port for the pattern detection service
 EXPOSE 8002
