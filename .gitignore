@@ -2,6 +2,6 @@ venv
 nosql/.venv
 nosql/nosql/.env
 jja-animal-classification/INPUT_model_path/animal-cnn/model.keras
-./nosql/ana_report/my_model.keras
-./nosql/ana_model/model.keras
-./nosql/ana_model/my_model.keras
+nosql/ana_report/my_model.keras
+nosql/ana_model/model.keras
+nosql/ana_model/my_model.keras
