@@ -11,3 +11,6 @@ http://localhost:8002/pattern/DEZ:DE
 
 {"symbol":"VIB3:DE","pattern_detected":false}
 
+
+the python scripts allow for batch checking of all the companies, the results are stored in symbolpatterns or symbolpatterns2
+the difference between these tables is the datatype (jsonb or normal)

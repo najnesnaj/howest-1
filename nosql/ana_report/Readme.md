@@ -1,6 +1,10 @@
 Readme
 ------
 
+
+a datasamle companies.sql can be loaded into a postgresql database
+
+
 this application visualises data
 
 http://localhost:8001/data/BMW:DE?market_cap
