@@ -1,10 +1,15 @@
 Documentation on workings and project 
 =====================================
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    about
+   deutz
+   market_cap
+   randomizer
+   ana-overview
    docker
    dockerhub
    cloud-setup
@@ -25,6 +30,7 @@ Documentation on workings and project
    certificates
    registry
    longhorn
+   ana-report
    postgresql
    azure-cli
    modules

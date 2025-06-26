@@ -9,7 +9,7 @@ this application visualises data
 
 http://localhost:8001/data/BMW:DE?market_cap
 
-
+docker build -t my-fastapi-app .
 docker run -d -p 8001:8001 --network nosql_default --name my-fastapi-app my-fastapi-app
 
 

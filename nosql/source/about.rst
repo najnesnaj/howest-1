@@ -7,35 +7,33 @@ The document is rather a quick reminder than a full blown manual.
 I attended a course, but I learn by doing. So I decided to create a project to apply the knowledge I gained.
 The project is about investing in the stock market, but also about setting up Kubernetes, Docker, Helm, and other tools.
 
-This project fetches company data and stores it in a local database.
+This project's data is real stockdata. 
 The data is a large json object and stored in postgres as a JSONB field.
 
-selecting data
---------------
+Container
+----------
 
-We are interested in the quarterly data for revenue and ROIC.
-Our hypothesis is that these values are important drivers for the marketprice.
-In order to prove this is the case, we extract marketcap as well.
-
-
-reporting
----------
-
-The data for revenue, ROIC, marketcap is stored in a pdf document, for each company.
-Each quarter is displayed in a color (green, orange, red).
-A criteria being used is the difference in percentage.
+The software was packed in Docker containers.
+This allows for deployment on a Kubernetes kluster as well. (helm script provided)
 
 
-trader behaviour
-----------------
+Visual
+------- 
 
-In investing there a many strategies: Buy&Hold, buy the dip, technical analysis with RSI, SMA to determine buy&sell opportunities.
-For this project we assume a selloff at a 8% drop.
+The data is accessible through a FASTAPI interface, and can be plotted.
 
-patterns
+
+Patterns
 --------
 
 As an investor, I'm interested in patterns. 
 Three green periods, followed by a red one.
 Reoccuring patterns, turnaround pattern ...
+
+
+AI model
+--------
+
+synthetic data was used to create a keras model.
+The purpose is to filter out similar patterns in the database. 
 

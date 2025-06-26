@@ -33,7 +33,7 @@ def create_sequences(data, window_size):
             y.append(sequence[i + window_size])
     return np.array(X), np.array(y)
 
-def build_and_save_model(output_path="my_keras.model"):
+def build_and_save_model(output_path="my_model.keras"):
     # Parameters
     n_arrays = 5000
     sequence_length = 70
