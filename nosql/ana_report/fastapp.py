@@ -94,7 +94,14 @@ def fetch_data(query: str, params: Optional[Tuple] = None) -> pd.DataFrame:
     except Exception as e:
         raise Exception(f"Database error: {str(e)}")
 
-
+def normalize_array(data):
+    """Normalize a list of numbers to the range [0, 1] using min-max normalization."""
+    if not data or not isinstance(data, list):
+        return data  # Return unchanged if empty or not a list
+    arr = np.array(data, dtype=float)
+    if len(arr) == 0 or arr.max() == arr.min():
+        return arr.tolist()  # Return as-is if empty or no range
+    return ((arr - arr.min()) / (arr.max() - arr.min())).tolist()
 
 
 # Function to categorize companies based on pattern
@@ -197,7 +204,7 @@ def get_data():
     
     return JSONResponse(content=result)
 
-@app.get("/data/{symbol}")
+@app.get("/data/market_cap/{symbol}")
 async def get_symbol_data(symbol: str):
     # Validate the symbol input to allow alphanumeric characters and colon
     if not symbol or not re.match(r'^[A-Za-z0-9:]+$', symbol):
@@ -230,25 +237,198 @@ async def get_symbol_data(symbol: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
 
+@app.get("/data/revenue/{symbol}")
+async def get_symbol_revenue(symbol: str):
+    # Validate the symbol input to allow alphanumeric characters and colon
+    if not symbol or not re.match(r'^[A-Za-z0-9:]+$', symbol):
+        raise HTTPException(status_code=400, detail="Invalid symbol format. Use alphanumeric characters and colon only.")
 
+    if len(symbol) > 50:
+        raise HTTPException(status_code=400, detail="Symbol is too long.")
 
-# New endpoint: /data/symbol/market_cap
-@app.get("/data/symbol/market_cap")
-def get_symbol_market_cap():
+    # Use parameterized query to prevent SQL injection
     query = """
-    SELECT 
+    SELECT
+        data->>'qfs_symbol_v2' AS symbol,
+        COALESCE(data->'financials'->'quarterly'->'revenue', '[]'::jsonb) AS revenue
+    FROM companies
+    WHERE data->>'qfs_symbol_v2' = %s;
+    """
+    try:
+        # Call fetch_data with query and parameters
+        df = fetch_data(query, (symbol,))
+
+        if df.empty:
+            raise HTTPException(status_code=404, detail=f"No revenue data found for symbol {symbol}")
+
+        # Drop duplicates and convert to dictionary
+        df = df.drop_duplicates(subset='symbol')
+        result = df.set_index('symbol').to_dict(orient="index")
+
+        return JSONResponse(content=result)
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+
+@app.get("/data/roic/{symbol}")
+async def get_symbol_roic(symbol: str):
+    # Validate the symbol input to allow alphanumeric characters and colon
+    if not symbol or not re.match(r'^[A-Za-z0-9:]+$', symbol):
+        raise HTTPException(status_code=400, detail="Invalid symbol format. Use alphanumeric characters and colon only.")
+
+    if len(symbol) > 50:
+        raise HTTPException(status_code=400, detail="Symbol is too long.")
+
+    # Use parameterized query to prevent SQL injection
+    query = """
+    SELECT
+        data->>'qfs_symbol_v2' AS symbol,
+        COALESCE(data->'financials'->'quarterly'->'roic', '[]'::jsonb) AS roic
+    FROM companies
+    WHERE data->>'qfs_symbol_v2' = %s;
+    """
+    try:
+        # Call fetch_data with query and parameters
+        df = fetch_data(query, (symbol,))
+
+        if df.empty:
+            raise HTTPException(status_code=404, detail=f"No ROIC data found for symbol {symbol}")
+
+        # Drop duplicates and convert to dictionary
+        df = df.drop_duplicates(subset='symbol')
+        result = df.set_index('symbol').to_dict(orient="index")
+
+        return JSONResponse(content=result)
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+@app.get("/data/market_cap/normalized/{symbol}")
+async def get_symbol_market_cap_normalized(symbol: str):
+    # Validate the symbol input to allow alphanumeric characters and colon
+    if not symbol or not re.match(r'^[A-Za-z0-9:]+$', symbol):
+        raise HTTPException(status_code=400, detail="Invalid symbol format. Use alphanumeric characters and colon only.")
+
+    if len(symbol) > 50:
+        raise HTTPException(status_code=400, detail="Symbol is too long.")
+
+    # Use parameterized query to prevent SQL injection
+    query = """
+    SELECT
         data->>'qfs_symbol_v2' AS symbol,
         COALESCE(data->'financials'->'quarterly'->'market_cap', '[]'::jsonb) AS market_cap
-    FROM companies;
+    FROM companies
+    WHERE data->>'qfs_symbol_v2' = %s;
     """
-    df = fetch_data(query)
-    
-    df['market_cap_category'] = df['market_cap'].apply(categorize_company)
-    df = df.drop_duplicates(subset='symbol')
-    result = df.set_index('symbol').to_dict(orient="index")
-    
-    return JSONResponse(content=result)
+    try:
+        # Call fetch_data with query and parameters
+        df = fetch_data(query, (symbol,))
 
+        if df.empty:
+            raise HTTPException(status_code=404, detail=f"No market cap data found for symbol {symbol}")
+
+        # Normalize the market_cap data
+        df['market_cap'] = df['market_cap'].apply(normalize_array)
+
+        # Drop duplicates and convert to dictionary
+        df = df.drop_duplicates(subset='symbol')
+        result = df.set_index('symbol').to_dict(orient="index")
+
+        return JSONResponse(content=result)
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+@app.get("/data/revenue/normalized/{symbol}")
+async def get_symbol_revenue_normalized(symbol: str):
+    # Validate the symbol input to allow alphanumeric characters and colon
+    if not symbol or not re.match(r'^[A-Za-z0-9:]+$', symbol):
+        raise HTTPException(status_code=400, detail="Invalid symbol format. Use alphanumeric characters and colon only.")
+
+    if len(symbol) > 50:
+        raise HTTPException(status_code=400, detail="Symbol is too long.")
+
+    # Use parameterized query to prevent SQL injection
+    query = """
+    SELECT
+        data->>'qfs_symbol_v2' AS symbol,
+        COALESCE(data->'financials'->'quarterly'->'revenue', '[]'::jsonb) AS revenue
+    FROM companies
+    WHERE data->>'qfs_symbol_v2' = %s;
+    """
+    try:
+        # Call fetch_data with query and parameters
+        df = fetch_data(query, (symbol,))
+
+        if df.empty:
+            raise HTTPException(status_code=404, detail=f"No revenue data found for symbol {symbol}")
+
+        # Normalize the revenue data
+        df['revenue'] = df['revenue'].apply(normalize_array)
+
+        # Drop duplicates and convert to dictionary
+        df = df.drop_duplicates(subset='symbol')
+        result = df.set_index('symbol').to_dict(orient="index")
+
+        return JSONResponse(content=result)
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+@app.get("/data/roic/normalized/{symbol}")
+async def get_symbol_roic_normalized(symbol: str):
+    # Validate the symbol input to allow alphanumeric characters and colon
+    if not symbol or not re.match(r'^[A-Za-z0-9:]+$', symbol):
+        raise HTTPException(status_code=400, detail="Invalid symbol format. Use alphanumeric characters and colon only.")
+
+    if len(symbol) > 50:
+        raise HTTPException(status_code=400, detail="Symbol is too long.")
+
+    # Use parameterized query to prevent SQL injection
+    query = """
+    SELECT
+        data->>'qfs_symbol_v2' AS symbol,
+        COALESCE(data->'financials'->'quarterly'->'roic', '[]'::jsonb) AS roic
+    FROM companies
+    WHERE data->>'qfs_symbol_v2' = %s;
+    """
+    try:
+        # Call fetch_data with query and parameters
+        df = fetch_data(query, (symbol,))
+
+        if df.empty:
+            raise HTTPException(status_code=404, detail=f"No ROIC data found for symbol {symbol}")
+
+        # Normalize the roic data
+        df['roic'] = df['roic'].apply(normalize_array)
+
+        # Drop duplicates and convert to dictionary
+        df = df.drop_duplicates(subset='symbol')
+        result = df.set_index('symbol').to_dict(orient="index")
+
+        return JSONResponse(content=result)
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+# New endpoint: /data/symbol/market_cap
+#@app.get("/data/symbol/market_cap")
+#def get_symbol_market_cap():
+#    query = """
+#    SELECT 
+#        data->>'qfs_symbol_v2' AS symbol,
+#        COALESCE(data->'financials'->'quarterly'->'market_cap', '[]'::jsonb) AS market_cap
+#    FROM companies;
+#    """
+#    df = fetch_data(query)
+#    
+#    df['market_cap_category'] = df['market_cap'].apply(categorize_company)
+#    df = df.drop_duplicates(subset='symbol')
+#    result = df.set_index('symbol').to_dict(orient="index")
+#    
+#    return JSONResponse(content=result)
+#
 
 
 # Endpoint to generate a plot for a specific company

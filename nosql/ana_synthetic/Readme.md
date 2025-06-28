@@ -22,6 +22,45 @@ generate a prompt that instructs a LLM to create synthetic data that must emphes
  0.24 0.3  0.14 0.09 0.07 0.26 0.13 0.1  0.25 0.43 0.55 0.43 0.63 0.73]
 
 
+
+FOR DEZ:DE market_cap
+generate a pythonscript that mimics this data : 
+
+
+[0.734500750153661,0.012759170653907496,0.0,0.16108452950558214,0.18819776714513556,0.17384370015948963,0.3237639553429027,0.2886762360446571,0.49282296650717705,0.6299840510366826,0.5821371610845295,0.7192982456140351,0.29984051036682613,0.2886762360446571,0.430622009569378,0.2727272727272727,0.19138755980861244,0.19776714513556617,0.28708133971291866,0.37320574162679426,0.6985557783658096,0.6682615629984051,0.6092503987240829,0.5614035087719298,0.30303030303030304,0.2711323763955343,0.2583732057416268,0.4529505582137161,0.11164274322169059,0.22169059011164274,0.2966507177033493,0.22328548644338117,0.3492822966507177,0.4864433811802233,0.6650717703349283,0.810207336523126,0.7240829346092504,0.8421052631578947,0.8213716108452951,0.6889952153110048,0.8564593301435407,0.45454545454545453,0.8229665071770335,1.0,0.48165869218500795,0.5215311004784688,0.16905901116427433,0.3004784688995215,0.4251993620414673,0.44657097288676234,0.6491228070175439,0.7200956937799043,0.8405103668261563,0.6810207336523126,0.4076555023923445,0.23700159489633174,0.11483253588516747,0.2784688995215311,0.5861244019138756,0.4920255183413078,0.3289922150658493,0.43219972469425305,0.6128128665439596,0.6369501066989895,0.45680484394964327]
+
+
+def generate_synthetic_data(length=65, period=8, noise_level=0.15):
+    """
+    Generate synthetic data mimicking the provided dataset with a quasi-periodic pattern.
+    
+    Args:
+        length (int): Number of data points (default: 65).
+        period (float): Period of the sinusoidal component (default: 8).
+        noise_level (float): Magnitude of random noise (default: 0.15).
+    
+    Returns:
+        list: Normalized synthetic data with 65 values in [0, 1].
+    """
+    # Generate base sinusoidal pattern
+    t = np.arange(length)
+    # Combine two sinusoids with different periods for varied oscillations
+    base_pattern = 0.5 * np.sin(2 * np.pi * t / period) + 0.3 * np.sin(2 * np.pi * t / (period * 2))
+    
+    # Add controlled noise
+    noise = np.random.normal(0, noise_level, length)
+    synthetic_data = base_pattern + noise
+    
+    # Normalize to [0, 1]
+    synthetic_data = (synthetic_data - np.min(synthetic_data)) / (np.max(synthetic_data) - np.min(synthetic_data))
+    
+    # Round to 6 decimal places
+    synthetic_data = np.round(synthetic_data, 6).tolist()
+    
+    return synthetic_data
+
+
+
 ====> result "Generate an array of 70 floating-point numbers that emphasizes a subtle, repeating pattern similar to a reference dataset, while maintaining synthetic distinctiveness. The data should range between 0.3 and 0.9, with a mean around 0.66 and a standard deviation of approximately 0.11, exhibiting a slightly right-skewed distribution. The pattern should include periodic fluctuations, such as alternating clusters of higher values (0.7–0.9) and lower values (0.3–0.6), with smooth transitions and occasional peaks, resembling a structured but non-obvious sequence. Avoid the randomness of a comparison dataset with values between 0.02 and 0.97, a mean around 0.49, and a standard deviation of about 0.27, which lacks discernible patterns and appears more uniformly scattered. Round all generated values to two decimal places."
 
 
@@ -50,3 +89,4 @@ building the application :
 docker build -t ana_synthetic .
 docker run -p 8003:8000 -v ./functions:/app/functions ana_synthetic
 
+==> copy new function to ./functions
