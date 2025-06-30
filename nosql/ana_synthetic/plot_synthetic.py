@@ -3,6 +3,8 @@ from fastapi.responses import HTMLResponse, JSONResponse
 import numpy as np
 import plotly.graph_objects as go
 import json
+from functions.random_data import generate_random_data
+import random
 
 app = FastAPI()
 
@@ -13,50 +15,48 @@ def get_item_color(data):
         diff = data[i] - data[i - 1]
         if diff > 0:
             colors.append("green")
-        elif -7 <= diff <= 0:
+        elif -0.07 <= diff <= 0:
             colors.append("orange")
         else:
             colors.append("red")
     return colors
 
-import random
 
 
-import random
 
-def generate_random_data(n=69):
-    assert n >= 33, "Need enough space to insert 4 high values with 8 apart"
-
-    # Step 1: Choose 4 indices for values >80, at least 8 apart
-    valid_quads = []
-    for i in range(0, n - 24):           # i + 8 + 8 + 8 <= n-1
-        for j in range(i + 8, n - 16):
-            for k in range(j + 8, n - 8):
-                for l in range(k + 8, n):
-                    valid_quads.append((i, j, k, l))
-
-    chosen_quad = random.choice(valid_quads)
-    high_positions = set(chosen_quad)
-
-    # Step 2: Generate values with constrained deltas
-    data = [random.randint(30, 70)]  # starting point
-
-    for i in range(1, n):
-        if i in high_positions:
-            value = random.randint(81, 100)
-        else:
-            prev = data[i - 1]
-            low = max(1, prev - 20)
-            high = min(100, prev + 20)
-            value = random.randint(low, high)
-
-            # Keep non-peak values at most 80
-            if value > 80:
-                value = random.randint(low, min(80, high))
-
-        data.append(value)
-
-    return data
+#def generate_random_data(n=69):
+#    assert n >= 33, "Need enough space to insert 4 high values with 8 apart"
+#
+#    # Step 1: Choose 4 indices for values >80, at least 8 apart
+#    valid_quads = []
+#    for i in range(0, n - 24):           # i + 8 + 8 + 8 <= n-1
+#        for j in range(i + 8, n - 16):
+#            for k in range(j + 8, n - 8):
+#                for l in range(k + 8, n):
+#                    valid_quads.append((i, j, k, l))
+#
+#    chosen_quad = random.choice(valid_quads)
+#    high_positions = set(chosen_quad)
+#
+#    # Step 2: Generate values with constrained deltas
+#    data = [random.randint(30, 70)]  # starting point
+#
+#    for i in range(1, n):
+#        if i in high_positions:
+#            value = random.randint(81, 100)
+#        else:
+#            prev = data[i - 1]
+#            low = max(1, prev - 20)
+#            high = min(100, prev + 20)
+#            value = random.randint(low, high)
+#
+#            # Keep non-peak values at most 80
+#            if value > 80:
+#                value = random.randint(low, min(80, high))
+#
+#        data.append(value)
+#
+#    return data
 
 
 
@@ -64,14 +64,14 @@ def generate_random_data(n=69):
 #def generate_random_data(n=69):
 #    return np.random.randint(1, 101, size=n).tolist()
 
-# Convert data and colors to Plotly chart JSON
 def generate_plot_json(data):
     colors = get_item_color(data)
+    scaled_data = [x * 100 for x in data]  # Scale data to [0, 100]
     fig = go.Figure(
         data=[
             go.Bar(
                 x=[f"Q{i+1}" for i in range(len(data))],
-                y=data,
+                y=scaled_data,  # Use scaled data
                 marker_color=colors
             )
         ]
@@ -79,9 +79,26 @@ def generate_plot_json(data):
     fig.update_layout(title="Random Data Bar Chart (Color Based on Value Change)")
     return json.loads(fig.to_json())
 
+
+# Convert data and colors to Plotly chart JSON
+#def generate_plot_json(data):
+#    colors = get_item_color(data)
+#    fig = go.Figure(
+#        data=[
+#            go.Bar(
+#                x=[f"Q{i+1}" for i in range(len(data))],
+#                y=data,
+#                marker_color=colors
+#            )
+#        ]
+#    )
+#    fig.update_layout(title="Random Data Bar Chart (Color Based on Value Change)")
+#    return json.loads(fig.to_json())
+
 @app.get("/plot-data", response_class=JSONResponse)
 async def get_plot_data():
     data = generate_random_data()
+    print (data)
     return generate_plot_json(data)
 
 @app.get("/", response_class=HTMLResponse)
