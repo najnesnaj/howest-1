@@ -50,7 +50,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 model.summary()
 
 # Train model
-model.fit(X_train, y_train, epochs=10, batch_size=32, validation_split=0.2, verbose=1)
+model.fit(X_train, y_train, epochs=50, batch_size=32, validation_split=0.2, verbose=1)
 
 # Evaluate on test set
 test_loss, test_accuracy = model.evaluate(X_test, y_test, verbose=0)
