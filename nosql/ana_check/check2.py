@@ -6,9 +6,9 @@ from urllib.parse import quote
 DATA_ENDPOINT = "http://localhost:8001/data"
 PATTERN_ENDPOINT = "http://localhost:8002/pattern/{}"
 DB_CONFIG = {
-    "dbname": "mydatabase",
-    "user": "myuser",
-    "password": "mypassword",
+    "dbname": "postgres",
+    "user": "postgres",
+    "password": "postgres",
     "host": "localhost",
     "port": "5432"
 }

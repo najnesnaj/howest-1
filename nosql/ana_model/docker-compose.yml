@@ -25,5 +25,5 @@ services:
 
 networks:
   postgres_postgres_1:
-    driver: bridge
+    external: true
 
