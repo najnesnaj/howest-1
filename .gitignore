@@ -1,5 +1,6 @@
 venv
 nosql/.venv
+nosql/.venvpycaret
 nosql/nosql/.env
 jja-animal-classification/INPUT_model_path/animal-cnn/model.keras
 nosql/ana_report/my_model.keras
