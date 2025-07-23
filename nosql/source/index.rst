@@ -10,6 +10,7 @@ Documentation on workings and project
    market_cap
    randomizer
    ana-overview
+   results
    docker
    dockerhub
    cloud-setup
