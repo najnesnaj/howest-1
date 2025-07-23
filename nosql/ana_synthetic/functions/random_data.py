@@ -58,7 +58,7 @@ def generate_random_data(max_change=0.15, min_val=0.01, max_val=1.0):
     
     # Apply changes and clip to ensure values stay within [min_val, max_val]
     varied_data = np.clip(rotated_data + changes, min_val, max_val)
-    
+    print (varied_data)    
     return varied_data.tolist()
 
 def generate_multiple_variations(original_data, num_variations=5, max_change=0.15, min_val=0.1, max_val=1.0):

@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    networks:
+      - postgres_1
+    ports:
+      - "5432:5432"
+    volumes:
+      -  postgres_data:/var/lib/postgresql/data
+      -  ./companies.sql:/docker-entrypoint-initdb.d/companies.sql
+
+    # Uncomment the following lines if you want to add a dependency on the postgres service
+    # depends_on:
+    #   - postgres
+
+
+networks:
+  postgres_1:
+    driver: bridge
+volumes:
+  postgres_data:

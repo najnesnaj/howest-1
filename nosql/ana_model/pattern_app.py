@@ -23,7 +23,7 @@ POSTGRES_HOST = os.getenv("POSTGRES_HOST")
 POSTGRES_PORT = os.getenv("POSTGRES_PORT")
 
 # Load the Keras model at startup for efficiency
-MODEL = tf.keras.models.load_model('my_model.keras')
+MODEL = tf.keras.models.load_model('model.keras')
 
 # Database query function
 def fetch_data(query: str, params: Optional[Tuple] = None) -> pd.DataFrame:

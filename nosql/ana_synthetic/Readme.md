@@ -16,7 +16,7 @@ functions:
 ====> verify behaviour  
 
 plot_synthetic.py
-this plot the synthic data, so you can check the result visually
+this plots the synthic data, so you can check the result visually
 
 ====> it the synthetic data is OK, we can create a model with it
 train_pattern_model.py
