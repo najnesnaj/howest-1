@@ -11,6 +11,7 @@ Documentation on workings and project
    randomizer
    ana-overview
    results
+   conclusion
    docker
    dockerhub
    cloud-setup

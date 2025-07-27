@@ -57,6 +57,17 @@ http://localhost:8001/plot/DEZ:DE?metric=market_cap
 http://localhost:8001/plot/ATLO:US?metric=market_cap
 
 
+Approach 5
+---------- 
+
+dtaidistance : Time series distances: Dynamic Time Warping (fast DTW implementation in C) 
+
+https://github.com/wannesm/dtaidistance
+
+This is a python library (as well as cypython library), which calculates the distance to a given timeseries (Deutz). The smallest distance would be those share that resemble Deutz the most.
+
+
+
 
 
 
